@@ -27,10 +27,21 @@ public class Producto {
 	@ManyToOne 
 	private  Talle talle;
 	
+	@ManyToOne 
+	private  Tipo tipo;
+	
 	////////////////////////////////
 	////////////////////////////////
 	////////////////////////////////
 	
+	public Tipo getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -86,10 +97,5 @@ public class Producto {
 	public void setTalle(Talle talle) {
 		this.talle = talle;
 	}
-
-
-
-
-
 
 }

@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Color {
+public class Tipo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +17,7 @@ public class Color {
 	////////////////////////////////
 	////////////////////////////////
 	////////////////////////////////
-	
+
 	public Long getId() {
 		return id;
 	}
