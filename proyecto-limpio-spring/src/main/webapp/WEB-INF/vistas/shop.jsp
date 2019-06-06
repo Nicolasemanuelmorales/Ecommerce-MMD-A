@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Winkel - Free Bootstrap 4 Template by Colorlib</title>
+    <title>MMD'A</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -57,12 +57,12 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="shop.html" class="nav-link">Productos</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">Nosotros</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+	          <li class="nav-item"><a href="index" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="shop" class="nav-link">Productos</a></li>
+	          <li class="nav-item"><a href="about" class="nav-link">Nosotros</a></li>
+	          <li class="nav-item"><a href="blog" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="contact" class="nav-link">Contacto</a></li>
+	          <li class="nav-item cta cta-colored"><a href="cart" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -73,8 +73,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Products</span></p>
-            <h1 class="mb-0 bread">Collection Products</h1>
+          
+            <h1 class="mb-0 bread">Productos de coleccion</h1>
           </div>
         </div>
       </div>
