@@ -330,49 +330,48 @@
 
 		    	<div class="col-md-4 col-lg-2 sidebar">
 		    		<div class="sidebar-box-2">
-		    			<h2 class="heading mb-4"><a href="#">Clothing</a></h2>
+		    			<h2 class="heading mb-4"><a href="#">Remeras</a></h2>
 		    			<ul>
-		    				<li><a href="#">Shirts &amp; Tops</a></li>
-								<li><a href="#">Dresses</a></li>
-								<li><a href="#">Shorts &amp; Skirts</a></li>
-								<li><a href="#">Jackets</a></li>
-								<li><a href="#">Coats</a></li>
-								<li><a href="#">Sleeveless</a></li>
-								<li><a href="#">Trousers</a></li>
-								<li><a href="#">Winter Coats</a></li>
-								<li><a href="#">Jumpsuits</a></li>
+								<li><a href="/proyecto-limpio-spring/RemeraMangalarga">Manga larga</a></li>
+								<li><a href="/proyecto-limpio-spring/RemeraMangacorta">Manga corta</a></li>
+								<li><a href="/proyecto-limpio-spring/RemeraMusculosa">Musculosa</a></li>
 		    			</ul>
 		    		</div>
 		    		<div class="sidebar-box-2">
-		    			<h2 class="heading mb-4"><a href="#">Jeans</a></h2>
+		    			<h2 class="heading mb-4"><a href="#">Camisas</a></h2>
 		    			<ul>
-		    				<li><a href="#">Shirts &amp; Tops</a></li>
-								<li><a href="#">Dresses</a></li>
-								<li><a href="#">Shorts &amp; Skirts</a></li>
-								<li><a href="#">Jackets</a></li>
-								<li><a href="#">Coats</a></li>
-								<li><a href="#">Jeans</a></li>
-								<li><a href="#">Sleeveless</a></li>
-								<li><a href="#">Trousers</a></li>
-								<li><a href="#">Winter Coats</a></li>
-								<li><a href="#">Jumpsuits</a></li>
+								<li><a href="/proyecto-limpio-spring/CamisaMangalarga">Manga larga</a></li>
+								<li><a href="/proyecto-limpio-spring/CamisaMangacorta">Manga corta</a></li>
+								<li><a href="/proyecto-limpio-spring/CamisaElegante">Elegante</a></li>
 		    			</ul>
-		    		</div>
-		    		<div class="sidebar-box-2">
-		    			<h2 class="heading mb-2"><a href="#">Bags</a></h2>
-		    			<h2 class="heading mb-2"><a href="#">Accessories</a></h2>
 		    		</div>
 						<div class="sidebar-box-2">
-		    			<h2 class="heading mb-4"><a href="#">Shoes</a></h2>
+		    			<h2 class="heading mb-4"><a href="#">Buzos</a></h2>
 		    			<ul>
-		    				<li><a href="#">Nike</a></li>
-								<li><a href="#">Addidas</a></li>
-								<li><a href="#">Skechers</a></li>
-								<li><a href="#">Jackets</a></li>
-								<li><a href="#">Coats</a></li>
-								<li><a href="#">Jeans</a></li>
+								<li><a href="/proyecto-limpio-spring/BuzoCanguro">Canguro</a></li>
+								<li><a href="/proyecto-limpio-spring/BuzoBasico">Basico</a></li>
+								<li><a href="/proyecto-limpio-spring/BuzoElegante">Elegante</a></li>
 		    			</ul>
 		    		</div>
+		    		
+		    		<div class="sidebar-box-2">
+		    			<h2 class="heading mb-4"><a href="#">Pantalon</a></h2>
+		    			<ul>
+								<li><a href="/proyecto-limpio-spring/PantalonJean">Jean</a></li>
+								<li><a href="/proyecto-limpio-spring/PantalonJoggin">Joggin</a></li>
+								<li><a href="/proyecto-limpio-spring/PantalonGabardina">Gabardina</a></li>
+		    			</ul>
+		    		</div>
+		    		
+		    		<div class="sidebar-box-2">
+		    			<h2 class="heading mb-4"><a href="#">Bermuda</a></h2>
+		    			<ul>
+								<li><a href="/proyecto-limpio-spring/BermudaJean">Jean</a></li>
+								<li><a href="/proyecto-limpio-spring/BermudaJoggin">Joggin</a></li>
+								<li><a href="/proyecto-limpio-spring/BermudaGabardina">Gabardina</a></li>
+		    			</ul>
+		    		</div>
+		    		
     			</div>
     		</div>
     	</div>
@@ -390,8 +389,8 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Winkel</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+              <h2 class="ftco-heading-2">MMD'A</h2>
+              <p>Uso total para el proyecto de Taller web 1</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -403,38 +402,36 @@
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">Menu</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Shop</a></li>
-                <li><a href="#" class="py-2 d-block">About</a></li>
-                <li><a href="#" class="py-2 d-block">Journal</a></li>
-                <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+                <li><a href="#" class="py-2 d-block">Home</a></li>
+                <li><a href="#" class="py-2 d-block">Productos</a></li>
+                <li><a href="#" class="py-2 d-block">Nosotros</a></li>
+                <li><a href="#" class="py-2 d-block">Blog</a></li>
+                <li><a href="#" class="py-2 d-block">Contacto</a></li>
               </ul>
             </div>
           </div>
           <div class="col-md-4">
              <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Help</h2>
+              <h2 class="ftco-heading-2">Ayuda</h2>
               <div class="d-flex">
 	              <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
-	                <li><a href="#" class="py-2 d-block">Shipping Information</a></li>
-	                <li><a href="#" class="py-2 d-block">Returns &amp; Exchange</a></li>
-	                <li><a href="#" class="py-2 d-block">Terms &amp; Conditions</a></li>
-	                <li><a href="#" class="py-2 d-block">Privacy Policy</a></li>
+	                <li><a href="#" class="py-2 d-block">Informacion de envio</a></li>
+	                <li><a href="#" class="py-2 d-block">Devoluciones</a></li>
+	                <li><a href="#" class="py-2 d-block">Terminos y Condiciones</a></li>
+	                <li><a href="#" class="py-2 d-block">Politica de privacidad</a></li>
 	              </ul>
-	              <ul class="list-unstyled">
-	                <li><a href="#" class="py-2 d-block">FAQs</a></li>
-	                <li><a href="#" class="py-2 d-block">Contact</a></li>
-	              </ul>
+	              
 	            </div>
             </div>
           </div>
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<h2 class="ftco-heading-2">Tienes una Pregunta?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Florencio Varela 1903, B1754 San Justo, Buenos Aires</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+54 11 3523 5598</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">MMD'A@unlam.com</span></a></li>
 	              </ul>
 	            </div>
             </div>
@@ -444,7 +441,7 @@
           <div class="col-md-12 text-center">
 
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | MMD'A
 						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						</p>
           </div>
