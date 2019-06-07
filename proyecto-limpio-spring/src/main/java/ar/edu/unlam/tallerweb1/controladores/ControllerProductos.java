@@ -1,5 +1,6 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -16,24 +17,24 @@ import org.springframework.web.servlet.ModelAndView;
 import ar.edu.unlam.tallerweb1.modelo.Producto;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 import ar.edu.unlam.tallerweb1.servicios.ServicioLogin;
+import ar.edu.unlam.tallerweb1.servicios.ServicioProducto;
 
 @Controller
-public class ControladorProductos {
+public class ControllerProductos {
 
 	@Inject
-	private ServicioLogin servicioLogin;
-
-	@RequestMapping(path = "/shop/{filtro}")
-	public ModelAndView Filtar(@PathVariable String filtro, HttpServletRequest request) {
+	private ServicioProducto producto;
+	
+	@RequestMapping(path = "/shop/{filtrar}")
+	public ModelAndView validarProducto(@PathVariable String filtrar) {
+		
 		ModelMap model = new ModelMap();
 
-		List <Producto> productoBuscado = servicioLogin.consultarProducto(filtro);
+		List<Producto> lista = producto.consultarProducto(filtrar);
 		
-		return new ModelAndView("login", model);
-	}
+		model.put("xd", lista);
 		
-	@RequestMapping(path = "/", method = RequestMethod.GET)
-	public ModelAndView inicio() {
-		return new ModelAndView("redirect:/login");
+		return new ModelAndView("shop2", model);
 	}
+	
 }

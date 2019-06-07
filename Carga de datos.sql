@@ -63,7 +63,7 @@ insert into Material(Id,nombre)
 Value(2,'Cuero');
 
 insert into Material(Id,nombre)
-Value(2,'Cuerina');
+Value(4,'Cuerina');
 
 insert into Material(Id,nombre)
 Value(3,'Seda');
@@ -129,7 +129,7 @@ Value(15,'CamisaElegante');
 /* Producto */
 
 insert into Producto (Id,imagen,nombre,precio,color_id,material_id,talle_id,tipo_id)
-Value(1,'URL IMAGEN','AB SUPP POLO',450.00,1,1,1,1);
+Value(4,'/images/asd.jpeg','AB SUPP POLO',450.00,1,1,1,1);
 
 insert into Producto(Id,imagen,nombre,precio,color_id,material_id,talle_id,tipo_id)
 Value(2,'URL IMAGEN','AB SUPP dsssa',350.00,2,2,2,2);

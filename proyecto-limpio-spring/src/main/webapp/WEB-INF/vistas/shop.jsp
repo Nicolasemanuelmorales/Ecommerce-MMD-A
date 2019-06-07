@@ -332,9 +332,9 @@
 		    		<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Remeras</a></h2>
 		    			<ul>
-								<li><a href="/proyecto-limpio-spring/RemeraMangalarga">Manga larga</a></li>
-								<li><a href="/proyecto-limpio-spring/RemeraMangacorta">Manga corta</a></li>
-								<li><a href="/proyecto-limpio-spring/RemeraMusculosa">Musculosa</a></li>
+								<li><a href="/proyecto-limpio-spring/shop/RemeraMangalarga">Manga larga</a></li>
+								<li><a href="/proyecto-limpio-spring/shop/RemeraMangacorta">Manga corta</a></li>
+								<li><a href="/proyecto-limpio-spring/shop/RemeraMusculosa">Musculosa</a></li>
 		    			</ul>
 		    		</div>
 		    		<div class="sidebar-box-2">
