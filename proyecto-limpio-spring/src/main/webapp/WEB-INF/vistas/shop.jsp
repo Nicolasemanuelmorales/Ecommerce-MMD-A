@@ -340,35 +340,35 @@
 		    		<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Camisas</a></h2>
 		    			<ul>
-								<li><a href="/proyecto-limpio-spring/CamisaMangalarga">Manga larga</a></li>
-								<li><a href="/proyecto-limpio-spring/CamisaMangacorta">Manga corta</a></li>
-								<li><a href="/proyecto-limpio-spring/CamisaElegante">Elegante</a></li>
+								<li><a href="/proyecto-limpio-spring/shop/CamisaMangalarga">Manga larga</a></li>
+								<li><a href="/proyecto-limpio-spring/shop/CamisaMangacorta">Manga corta</a></li>
+								<li><a href="/proyecto-limpio-spring/shop/CamisaElegante">Elegante</a></li>
 		    			</ul>
 		    		</div>
 						<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Buzos</a></h2>
 		    			<ul>
-								<li><a href="/proyecto-limpio-spring/BuzoCanguro">Canguro</a></li>
-								<li><a href="/proyecto-limpio-spring/BuzoBasico">Basico</a></li>
-								<li><a href="/proyecto-limpio-spring/BuzoElegante">Elegante</a></li>
+								<li><a href="/proyecto-limpio-spring/shop/BuzoCanguro">Canguro</a></li>
+								<li><a href="/proyecto-limpio-spring/shop/BuzoBasico">Basico</a></li>
+								<li><a href="/proyecto-limpio-spring/shop/BuzoElegante">Elegante</a></li>
 		    			</ul>
 		    		</div>
 		    		
 		    		<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Pantalon</a></h2>
 		    			<ul>
-								<li><a href="/proyecto-limpio-spring/PantalonJean">Jean</a></li>
-								<li><a href="/proyecto-limpio-spring/PantalonJoggin">Joggin</a></li>
-								<li><a href="/proyecto-limpio-spring/PantalonGabardina">Gabardina</a></li>
+								<li><a href="/proyecto-limpio-spring/shop/PantalonJean">Jean</a></li>
+								<li><a href="/proyecto-limpio-spring/shop/PantalonJoggin">Joggin</a></li>
+								<li><a href="/proyecto-limpio-spring/shop/PantalonGabardina">Gabardina</a></li>
 		    			</ul>
 		    		</div>
 		    		
 		    		<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Bermuda</a></h2>
 		    			<ul>
-								<li><a href="/proyecto-limpio-spring/BermudaJean">Jean</a></li>
-								<li><a href="/proyecto-limpio-spring/BermudaJoggin">Joggin</a></li>
-								<li><a href="/proyecto-limpio-spring/BermudaGabardina">Gabardina</a></li>
+								<li><a href="/proyecto-limpio-spring/shop/BermudaJean">Jean</a></li>
+								<li><a href="/proyecto-limpio-spring/shop/BermudaJoggin">Joggin</a></li>
+								<li><a href="/proyecto-limpio-spring/shop/BermudaGabardina">Gabardina</a></li>
 		    			</ul>
 		    		</div>
 		    		
