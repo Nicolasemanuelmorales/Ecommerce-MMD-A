@@ -7,19 +7,19 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import ar.edu.unlam.tallerweb1.dao.ProductoDao;
+import ar.edu.unlam.tallerweb1.dao.BuscarDao;
 import ar.edu.unlam.tallerweb1.modelo.Producto;
 
-@Service("servicioProducto")
+@Service("servicioBuscar")
 @Transactional
-public class ServicioProductoImpl implements ServicioProducto{
+public class ServicioBuscarImpl implements ServicioBuscar{
 
 	@Inject
-	private ProductoDao servicioProductoDao;
+	private BuscarDao servicioBuscarDao;
 
 	@Override
-	public List<Producto> consultarProducto(String filtro) {
-		return servicioProductoDao.consultarProducto(filtro);
+	public List<Producto> consultarBuscarServ(String item) {
+		return servicioBuscarDao.consultarBuscarDao(item);
 	}
 	
 }

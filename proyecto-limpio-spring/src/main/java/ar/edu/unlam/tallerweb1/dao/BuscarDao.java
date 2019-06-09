@@ -4,8 +4,6 @@ import java.util.List;
 
 import ar.edu.unlam.tallerweb1.modelo.Producto;
 
-public interface ProductoDao {
-
-	List<Producto> consultarProducto(String filtro);
-
+public interface BuscarDao {
+	List<Producto> consultarBuscarDao(String item);
 }
