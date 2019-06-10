@@ -28,11 +28,8 @@ public class ControllerProductos {
 	public ModelAndView validarProducto(@PathVariable String filtrar) {
 		
 		ModelMap model = new ModelMap();
-
 		List<Producto> lista = producto.consultarProducto(filtrar);
-		
 		model.put("xd", lista);
-		
 		return new ModelAndView("shop2", model);
 	}
 	

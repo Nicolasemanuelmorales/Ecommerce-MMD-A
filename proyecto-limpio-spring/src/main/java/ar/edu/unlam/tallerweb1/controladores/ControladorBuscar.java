@@ -26,8 +26,8 @@ public class ControladorBuscar{
 	@RequestMapping(path="/buscar-esto", method=RequestMethod.POST)
 	public ModelAndView busqueda(@RequestParam ("nombre") String item) {
 		ModelMap model = new ModelMap();
-		List<Producto> item_buscado = buscar.consultarBuscarServ(item);
-		model.put("resultado",item_buscado);
-		return new ModelAndView("resp",model);
+		List<Producto> lista = buscar.consultarBuscarServ(item);
+		model.put("xd",lista);
+		return new ModelAndView("shop3",model);
 	}
 }
