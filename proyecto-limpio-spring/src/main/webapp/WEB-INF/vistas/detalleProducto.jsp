@@ -76,7 +76,7 @@
     		<div class="row">
     		<c:forEach items="${xd}" var="i">
     			<div class="col-lg-6 mb-5 ftco-animate">
-    				<a href="../images/menu-2.jpg" class="image-popup"><img src="../ ${i.imagen}" class="img-fluid" alt="Colorlib Template"></a>
+    				<a href="../ ${i.imagen}" class="image-popup"><img src="../ ${i.imagen}" class="img-fluid" alt="Colorlib Template"></a>
     			</div>
     			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
     				<h3>${i.nombre}</h3>
