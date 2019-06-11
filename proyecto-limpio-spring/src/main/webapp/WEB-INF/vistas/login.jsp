@@ -12,18 +12,20 @@
     <!-- END nav -->
     
 		<div class = "container">
-			<div id="loginbox" style="margin-top:50px;" class="bg-white p-5 contact-form">
+			<div id="loginbox" style="margin-top:5px;" class="bg-white p-5 contact-form">
 				<%--Definicion de un form asociado a la accion /validar-login por POST. Se indica ademas que el model attribute se--%>
 				<%--debe referenciar con el nombre usuario, spring mapea los elementos de la vista con los atributos de dicho objeto--%>
 					<%--para eso debe coincidir el valor del elemento path de cada input con el nombre de un atributo del objeto --%>
 				
-				<form:form action="validar-login" method="POST" modelAttribute="usuario">
+				<form:form name="f1" action="validar-login" method="POST" modelAttribute="usuario">
 			    	<h1 class="mb-0 bread text-center ">Taller Web I</h1>
 					<hr class="colorgraph"><br>
 
 					<%--Elementos de entrada de datos, el elemento path debe indicar en que atributo del objeto usuario se guardan los datos ingresados--%>
-					<form:input path="email" id="email" type="email" class="form-control" /><br>
-					<form:input path="password" type="password" id="password" class="form-control"/>    
+					<label for="email">Usuario</label>
+					<form:input path="email" id="email" type="email" name="email" class="form-control" /><br>
+					<label for="password">Contraseña</label>
+					<form:input path="password" type="password" id="password" name="password" class="form-control"/>    
 					<br> 		  
 					
 					<button class="btn btn-lg btn-primary btn-block" Type="Submit"/>Conectar</button>

@@ -1,3 +1,5 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +10,6 @@
 	<%@include file='barra_superior.jsp'%>
     <%@include file='menu.jsp'%>
     <!-- END nav -->
-
     <section id="home-section" class="hero">
 		  <div class="home-slider js-fullheight owl-carousel">
 	      <div class="slider-item js-fullheight">

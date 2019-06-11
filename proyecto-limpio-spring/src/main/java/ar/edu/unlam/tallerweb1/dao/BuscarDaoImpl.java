@@ -20,7 +20,8 @@ public class BuscarDaoImpl implements BuscarDao{
 		final Session session = sessionFactory.getCurrentSession();
 		return (List<Producto>) session
 				.createCriteria(Producto.class, "p")
-				.add(Restrictions.like("p.nombre",item))
+				.createAlias("p.tipo", "pt")
+				.add(Restrictions.like("pt.nombre",item))
 				.list();
 	}
 
