@@ -33,5 +33,13 @@ public class ControllerProductos {
 		return new ModelAndView("shop2", model);
 	}
 	
+	@RequestMapping(path = "/shop/{filtrar}/{formaDeFiltro}/{formaDeFiltro2}")
+	public ModelAndView filtrarPor(@PathVariable String filtrar, @PathVariable Double formaDeFiltro,@PathVariable Double formaDeFiltro2) {
+		ModelMap model = new ModelMap();
+		// lista = producto.consultarProducto(filtrar);
+		 List<Producto> lista = producto.filtrarProductoPor(formaDeFiltro,formaDeFiltro2);
+		model.put("xd", lista);
+		return new ModelAndView("shop2", model);
+	}
 	
 }

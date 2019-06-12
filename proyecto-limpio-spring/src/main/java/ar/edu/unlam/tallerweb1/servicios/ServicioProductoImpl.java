@@ -21,5 +21,9 @@ public class ServicioProductoImpl implements ServicioProducto{
 	public List<Producto> consultarProducto(String filtro) {
 		return servicioProductoDao.consultarProducto(filtro);
 	}
+	@Override
+	public List<Producto> filtrarProductoPor(Double formaDeFiltro, Double formaDeFiltro2) {
+		return servicioProductoDao.filtrarProductoPor(formaDeFiltro, formaDeFiltro2);
+	}
 	
 }

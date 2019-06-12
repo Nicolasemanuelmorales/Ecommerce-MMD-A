@@ -177,7 +177,12 @@
 								<li><a href="/proyecto-limpio-spring/shop/BermudaGabardina">Gabardina</a></li>
 		    			</ul>
 		    		</div>
-		    		
+		    		<div class="sidebar-box-2">
+		    			<h2 class="heading mb-4"><a href="#">Filtrar</a></h2>
+		    			<ul>
+								<li><a href="/proyecto-limpio-spring/shop/BermudaJean">Precio</a></li>
+		    			</ul>
+		    		</div>
     			</div>
     		</div>
     	</div>

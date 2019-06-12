@@ -8,4 +8,6 @@ public interface ProductoDao {
 
 	List<Producto> consultarProducto(String filtro);
 
+	List<Producto> filtrarProductoPor(Double formaDeFiltro, Double formaDeFiltro2);
+
 }

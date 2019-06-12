@@ -1,6 +1,6 @@
-drop Database if exists `db`;
+/*drop Database if exists `db`;
 create Database `db`;
-
+*/
 Use `db`;
 
 /* Usuario */
@@ -131,10 +131,10 @@ Value(150,'CamisaElegante');
 /*P Remeras ML*/
 
 insert into Producto (Id,imagen,nombre,precio,color_id,material_id,talle_id,tipo_id)
-Value(1,'images/rml1.jpg','AB SUPP POLO',420.00,2,1,4,111);
+Value(1,'images/rml1.jpg','AB SUPP POLO',420,2,1,4,111);
 
 insert into Producto (Id,imagen,nombre,precio,color_id,material_id,talle_id,tipo_id)
-Value(2,'images/rml2.jpg','HAND DRAWN T2',470.00,7,3,3,111);
+Value(2,'images/rml2.jpg','HAND DRAWN T2',470,7,3,3,111);
 
 insert into Producto (Id,imagen,nombre,precio,color_id,material_id,talle_id,tipo_id)
 Value(3,'images/rml3.jpg','SPEEDWICK GRAPHIC',500.00,3,1,2,111);
