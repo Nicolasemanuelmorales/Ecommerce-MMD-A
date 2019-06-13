@@ -7,12 +7,12 @@
 
       	<div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="shop.html" class="nav-link">Productos</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">Nosotros</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+	          <li class="nav-item"><a href="http://localhost:8080/proyecto-limpio-spring/index" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="http://localhost:8080/proyecto-limpio-spring/shop" class="nav-link">Productos</a></li>
+	          <li class="nav-item"><a href="http://localhost:8080/proyecto-limpio-spring/about" class="nav-link">Nosotros</a></li>
+	          <li class="nav-item"><a href="http://localhost:8080/proyecto-limpio-spring/blog" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="http://localhost:8080/proyecto-limpio-spring/contact" class="nav-link">Contacto</a></li>
+	          <li class="nav-item cta cta-colored"><a href="http://localhost:8080/proyecto-limpio-spring/cart" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 	        </ul>
 	   	</div>
 	</div>

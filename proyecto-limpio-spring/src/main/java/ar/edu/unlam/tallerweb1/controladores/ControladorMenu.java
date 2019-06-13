@@ -1,5 +1,9 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,8 +44,13 @@ public class ControladorMenu {
 	}
 	
 	@RequestMapping(path = "/shop/cart", method = RequestMethod.GET)
-	public ModelAndView irACarritoOriginal() {
-		return new ModelAndView("redirect:/carrito");
+	public ModelAndView irACarritoOriginal(HttpServletRequest request) {
+		HttpSession session = request.getSession(false);
+		if (session == null) {
+			 return new ModelAndView("redirect:/login");
+		} else {
+			return new ModelAndView("carrito");
+		}
 	}
 	
 	@RequestMapping(path = "/shop/index", method = RequestMethod.GET)
@@ -56,8 +65,13 @@ public class ControladorMenu {
 	
 	
 	@RequestMapping(path = "/cart", method = RequestMethod.GET)
-	public ModelAndView irACarrito() {
-		return new ModelAndView("carrito");
+	public ModelAndView irACarrito(HttpServletRequest request) {
+		HttpSession session = request.getSession(false);
+		if (session == null) {
+			 return new ModelAndView("redirect:/login");
+		} else {
+			return new ModelAndView("carrito");
+		}
 	}
 	
 	
