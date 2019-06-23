@@ -178,9 +178,14 @@
 		    			</ul>
 		    		</div>
 		    		<div class="sidebar-box-2">
-		    			<h2 class="heading mb-4"><a href="#">Filtrar</a></h2>
+		    			<h2 class="heading mb-4">Filtrar</h2>
 		    			<ul>
-								<li><a href="/proyecto-limpio-spring/shop/BermudaJean">Precio</a></li>
+								<li>Precio</li>
+								<form action="shop/{formaDeFiltro}/{formaDeFiltro2}" method="GET">
+								<li><input placeholder="minimo" name="formaDeFiltro"  type="number" class="form-control" value="${formaDeFiltro}"/></li>
+								<li><input placeholder="maximo" name="formaDeFiltro2"  type="number" class="form-control" value="${formaDeFiltro2}"/></li>
+								<button class="btn btn btn-primary btn-block" Type="Filtrar"/>Filtrar</button>	
+								</form>
 		    			</ul>
 		    		</div>
     			</div>

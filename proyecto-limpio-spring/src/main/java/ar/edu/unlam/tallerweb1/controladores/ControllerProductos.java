@@ -11,7 +11,7 @@ import org.springframework.ui.ModelMap;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unlam.tallerweb1.modelo.Producto;
@@ -34,7 +34,7 @@ public class ControllerProductos {
 	}
 	
 	@RequestMapping(path = "/shop/{filtrar}/{formaDeFiltro:.+}/{formaDeFiltro2:.+}")
-	public ModelAndView filtrarPor(@PathVariable String filtrar, @PathVariable("formaDeFiltro") Double formaDeFiltro,@PathVariable("formaDeFiltro2") Double formaDeFiltro2) {
+	public ModelAndView filtrarPor(@RequestParam String filtrar, @RequestParam("formaDeFiltro") Double formaDeFiltro,@RequestParam("formaDeFiltro2") Double formaDeFiltro2) {
 		ModelMap model = new ModelMap();
 		// List<Producto> lista = producto.consultarProducto();
 		List<Producto> lista = producto.filtrarProductoPor(filtrar,formaDeFiltro,formaDeFiltro2);
