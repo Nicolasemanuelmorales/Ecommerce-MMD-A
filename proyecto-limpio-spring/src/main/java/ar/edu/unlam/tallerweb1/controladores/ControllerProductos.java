@@ -36,6 +36,16 @@ public class ControllerProductos {
 	@RequestMapping(path = "/shop/")
 	public ModelAndView filtrarPor(@RequestParam (required=false) String filtro, @RequestParam(required=false) Double formaDeFiltro,@RequestParam(required=false) Double formaDeFiltro2) {
 		ModelMap model = new ModelMap();
+		 System.out.println(filtro);
+		 if(filtro == null){
+			filtro = "%"; 
+		 }		 
+		 System.out.println(filtro);
+		 System.out.println(formaDeFiltro2);
+		 if(formaDeFiltro2 == null){
+			 formaDeFiltro2 = 100000.0;
+		 }
+		 System.out.println(formaDeFiltro2);
 		 List<Producto> lista = producto.filtrarProductoPor(filtro,formaDeFiltro,formaDeFiltro2);
 		model.put("xd", lista);
 		return new ModelAndView("shop", model);
