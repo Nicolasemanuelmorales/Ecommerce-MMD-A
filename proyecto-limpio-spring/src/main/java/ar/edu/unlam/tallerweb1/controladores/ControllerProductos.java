@@ -46,6 +46,10 @@ public class ControllerProductos {
 			 formaDeFiltro2 = 100000.0;
 		 }
 		 System.out.println(formaDeFiltro2);
+		 if(formaDeFiltro == null){
+			 formaDeFiltro= 0.0;
+		 }
+		 System.out.println(formaDeFiltro);
 		 List<Producto> lista = producto.filtrarProductoPor(filtro,formaDeFiltro,formaDeFiltro2);
 		model.put("xd", lista);
 		return new ModelAndView("shop", model);
