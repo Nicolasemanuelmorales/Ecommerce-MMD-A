@@ -75,11 +75,12 @@
 		          </div>
 		        </div>
 		    	</div>
-
+			
 		    	<div class="col-md-4 col-lg-2 sidebar">
+		    	<form action="${context}/shop/" method="GET">
 		    		<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Remeras</a></h2>
-		    			<form action="${context}/shop/" method="GET">
+		    			
 		    			<ul>
 		    					<div class="radio">
 								<li>
@@ -93,48 +94,72 @@
 								<li><input type="radio" name="filtro" value="RemeraMusculosa">Remera Musculosa</li></div>
 		    			</ul>
 		    			
-		    			<input type="number" value="${formaDeFiltro}" name="formaDeFiltro">
-		    			<br>
-		    			<input type="number" value="${formaDeFiltro2}" name="formaDeFiltro2">
-		    			<button type="submit">Filtrar</button>
-		    			</form>
+
+		    			
 		    		</div>
 		    		<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Camisas</a></h2>
 		    			<ul>
-								<li><a href="${context}/shop/CamisaMangalarga">Manga larga</a></li>
-								<li><a href="${context}/shop/CamisaMangacorta">Manga corta</a></li>
-								<li><a href="${context}/shop/CamisaElegante">Elegante</a></li>
+								<div class="radio">
+								<li><input type="radio" name="filtro" value="CamisaMangaLarga">Manga Larga</li></div>
+								
+									<div class="radio">
+								<li><input type="radio" name="filtro" value="CamisaMangacorta">Manga Corta</li></div>
+								
+									<div class="radio">
+								<li><input type="radio" name="filtro" value="CamisaElegante">Elegante</li></div>
 		    			</ul>
 		    		</div>
 						<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Buzos</a></h2>
 		    			<ul>
-								<li><a href="${context}/shop/BuzoCanguro">Canguro</a></li>
-								<li><a href="${context}/shop/BuzoBasico">Basico</a></li>
-								<li><a href="${context}/shop/BuzoElegante">Elegante</a></li>
+									<div class="radio">
+								<li><input type="radio" name="filtro" value="BuzoCanguro">Canguro</li></div>
+								
+									<div class="radio">
+								<li><input type="radio" name="filtro" value="BuzoBasico">Básico</li></div>
+								
+								
+									<div class="radio">
+								<li><input type="radio" name="filtro" value="BuzoElegante">Elegante</li></div>
 		    			</ul>
 		    		</div>
 		    		
 		    		<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Pantalon</a></h2>
 		    			<ul>
-								<li><a href="${context}/shop/PantalonJean">Jean</a></li>
-								<li><a href="${context}/shop/PantalonJoggin">Joggin</a></li>
-								<li><a href="${context}/shop/PantalonGabardina">Gabardina</a></li>
+									<div class="radio">
+								<li><input type="radio" name="filtro" value="PantalonJean">Jean</li></div>
+								
+									<div class="radio">
+								<li><input type="radio" name="filtro" value="PantalonJoggin">Joggin</li></div>
+								
+									<div class="radio">
+								<li><input type="radio" name="filtro" value="PantalonGabardina">Gabardina</li></div>
 		    			</ul>
 		    		</div>
 		    		
 		    		<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Bermuda</a></h2>
 		    			<ul>
-								<li><a href="${context}/shop/BermudaJean">Jean</a></li>
-								<li><a href="${context}/shop/BermudaJoggin">Joggin</a></li>
-								<li><a href="${context}/shop/BermudaGabardina">Gabardina</a></li>
+									<div class="radio">
+								<li><input type="radio" name="filtro" value="BermudaJean">Jean</li></div>
+								
+									<div class="radio">
+								<li><input type="radio" name="filtro" value="BermudaJoggin">Joggin</li></div>
+								
+									<div class="radio">
+								<li><input type="radio" name="filtro" value="BermudaGabardina">Gabardina</li></div>
 		    			</ul>
-		    		</div>
 		    		
+		    		 <input type="number" value="${formaDeFiltro}" name="formaDeFiltro">
+		    		<br>
+		    		<input type="number" value="${formaDeFiltro2}" name="formaDeFiltro2">
+    				<button type="submit">Filtrar</button>
+		    	</form>
+		    	</div>
     			</div>
+
     		</div>
     	</div>
     </section>
