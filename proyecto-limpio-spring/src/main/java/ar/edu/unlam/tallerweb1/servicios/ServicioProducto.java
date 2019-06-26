@@ -8,6 +8,6 @@ public interface ServicioProducto {
 	
 	List<Producto> consultarProducto(String filtrar);
 
-	List<Producto> filtrarProductoPor(String filtro, Double formaDeFiltro, Double formaDeFiltro2);
+	List<Producto> filtrarProductoPor(String filtro, Double formaDeFiltro, Double formaDeFiltro2, String ordenado);
 	
 }

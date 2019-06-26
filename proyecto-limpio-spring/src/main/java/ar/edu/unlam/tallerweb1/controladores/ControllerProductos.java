@@ -1,6 +1,9 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -34,7 +37,7 @@ public class ControllerProductos {
 //	}
 	
 	@RequestMapping(path = "/shop/")
-	public ModelAndView filtrarPor(@RequestParam (required=false) String filtro, @RequestParam(required=false) Double formaDeFiltro,@RequestParam(required=false) Double formaDeFiltro2) {
+	public ModelAndView filtrarPor(@RequestParam (required=false) String filtro, @RequestParam(required=false) Double formaDeFiltro,@RequestParam(required=false) Double formaDeFiltro2,@RequestParam(required=false) String ordenado) {
 		ModelMap model = new ModelMap();
 		 System.out.println(filtro);
 		 if(filtro == null){
@@ -50,7 +53,10 @@ public class ControllerProductos {
 			 formaDeFiltro= 0.0;
 		 }
 		 System.out.println(formaDeFiltro);
-		 List<Producto> lista = producto.filtrarProductoPor(filtro,formaDeFiltro,formaDeFiltro2);
+		 System.out.println("Variable ordenado es igual a = "+ordenado);
+
+		 List<Producto> lista = producto.filtrarProductoPor(filtro,formaDeFiltro,formaDeFiltro2,ordenado);
+		 
 		model.put("xd", lista);
 		return new ModelAndView("shop", model);
 	}

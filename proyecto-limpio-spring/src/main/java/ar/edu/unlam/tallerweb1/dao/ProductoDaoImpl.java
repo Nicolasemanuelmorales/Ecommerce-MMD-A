@@ -3,8 +3,11 @@ package ar.edu.unlam.tallerweb1.dao;
 import java.util.List;
 
 import javax.inject.Inject;
+
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import ar.edu.unlam.tallerweb1.modelo.Producto;
@@ -28,17 +31,30 @@ public class ProductoDaoImpl implements ProductoDao{
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Producto> filtrarProductoPor(String filtro, Double formaDeFiltro, Double formaDeFiltro2) {
+	public List<Producto> filtrarProductoPor(String filtro, Double formaDeFiltro, Double formaDeFiltro2, String ordenado) {
 		
+		if(ordenado == "mayor"){
+		System.out.println("Entre al if");
 		final Session session = sessionFactory.getCurrentSession();
 		return (List<Producto>) session
 		 .createCriteria(Producto.class)
-		.createAlias("tipo", "p")
+		 .createAlias("tipo", "p")
+		 .addOrder(Order.asc("precio"))
 		.add(Restrictions.like("p.nombre",filtro))
-	    .add( Restrictions.between("precio", formaDeFiltro, formaDeFiltro2) )
+	    .add( Restrictions.between("precio", formaDeFiltro, formaDeFiltro2))
+	    .list();
+	}else{
+		System.out.println("Entre al else");
+		final Session session = sessionFactory.getCurrentSession();
+		return (List<Producto>) session
+		 .createCriteria(Producto.class)
+		 .createAlias("tipo", "p")
+		.addOrder(Order.asc("precio"))
+		.add(Restrictions.like("p.nombre",filtro))
+	    .add( Restrictions.between("precio", formaDeFiltro, formaDeFiltro2))
 	    .list();
 	}
-
+	}
 	
 
 }

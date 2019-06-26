@@ -17,17 +17,19 @@
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
           
-            <h1 class="mb-0 bread">Productos de coleccion</h1>
+            <h1 class="mb-0 bread">${filtro}</h1>
           </div>
         </div>
       </div>
     </div>
 
     <section class="ftco-section bg-light">
+    
     	<div class="container">
     		<div class="row">
     			<div class="col-md-8 col-lg-10 order-md-last">
     				<div class="row">
+    				<h1></h1>
     				<c:forEach items="${xd}" var="i">
     				<div class="col-sm-6 col-md-6 col-lg-4 ftco-animate">
 		    				<div class="product">
@@ -155,6 +157,21 @@
 		    		 <input type="number" value="${formaDeFiltro}" name="formaDeFiltro">
 		    		<br>
 		    		<input type="number" value="${formaDeFiltro2}" name="formaDeFiltro2">
+		    		
+		    		
+		    		
+		    		
+		    		<div class="sidebar-box-2">
+		    			<h2 class="heading mb-4"><a href="#">Ordenar Precio</a></h2>
+		    			<ul>
+		    			<div class="radio">
+								<li><input type="radio" name="ordenado" value="mayor">Mayor</li></div>
+								<div class="radio">
+
+								<li><input type="radio" name="ordenado" value="menor">Menor</li></div>
+		    			</ul>
+		    			</div>    			
+		    		
     				<button type="submit">Filtrar</button>
 		    	</form>
 		    	</div>
