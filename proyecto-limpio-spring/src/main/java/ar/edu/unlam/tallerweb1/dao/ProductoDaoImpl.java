@@ -32,14 +32,14 @@ public class ProductoDaoImpl implements ProductoDao{
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Producto> filtrarProductoPor(String filtro, Double formaDeFiltro, Double formaDeFiltro2, String ordenado) {
-		
-		if(ordenado == "mayor"){
+		String mayor = "mayor";
+		if(mayor.equals(ordenado)){
 		System.out.println("Entre al if");
 		final Session session = sessionFactory.getCurrentSession();
 		return (List<Producto>) session
 		 .createCriteria(Producto.class)
 		 .createAlias("tipo", "p")
-		 .addOrder(Order.asc("precio"))
+		 .addOrder(Order.desc("precio"))
 		.add(Restrictions.like("p.nombre",filtro))
 	    .add( Restrictions.between("precio", formaDeFiltro, formaDeFiltro2))
 	    .list();
