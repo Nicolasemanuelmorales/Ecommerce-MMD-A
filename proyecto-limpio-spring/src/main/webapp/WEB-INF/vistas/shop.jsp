@@ -79,11 +79,25 @@
 		    	<div class="col-md-4 col-lg-2 sidebar">
 		    		<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Remeras</a></h2>
+		    			<form action="${context}/shop/" method="GET">
 		    			<ul>
-								<li><a href="${context}/shop/RemeraMangalarga">Manga larga</a></li>
-								<li><a href="${context}/shop/RemeraMangacorta">Manga corta</a></li>
-								<li><a href="${context}/shop/RemeraMusculosa">Musculosa</a></li>
+		    					<div class="radio">
+								<li>
+ 								 <input type="radio" name="filtro" value="RemeraMangalarga">Manga larga</li></div>
+ 								 
+ 								 <div class="radio">
+								<li><input type="radio" name="filtro" value="RemeraMangacorta">Manga corta</li></div>
+
+
+								<div class="radio">
+								<li><input type="radio" name="filtro" value="RemeraMusculosa">Remera Musculosa</li></div>
 		    			</ul>
+		    			
+		    			<input type="number" value="${formaDeFiltro}" name="formaDeFiltro">
+		    			<br>
+		    			<input type="number" value="${formaDeFiltro2}" name="formaDeFiltro2">
+		    			<button type="submit">Filtrar</button>
+		    			</form>
 		    		</div>
 		    		<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Camisas</a></h2>

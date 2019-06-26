@@ -28,11 +28,13 @@ public class ProductoDaoImpl implements ProductoDao{
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Producto> filtrarProductoPor(Double formaDeFiltro, Double formaDeFiltro2) {
+	public List<Producto> filtrarProductoPor(String filtro, Double formaDeFiltro, Double formaDeFiltro2) {
 		
 		final Session session = sessionFactory.getCurrentSession();
 		return (List<Producto>) session
-		 .createCriteria(Producto.class)		
+		 .createCriteria(Producto.class)
+		.createAlias("tipo", "p")
+		.add(Restrictions.like("p.nombre",filtro))
 	    .add( Restrictions.between("precio", formaDeFiltro, formaDeFiltro2) )
 	    .list();
 	}
