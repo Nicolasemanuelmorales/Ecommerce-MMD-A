@@ -1,5 +1,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<% 
+String filtro = request.getParameter("filtro");
+String formaDeFiltro = request.getParameter("formaDeFiltro");
+String formaDeFiltro2 = request.getParameter("formaDeFiltro2");
+String ordenado = request.getParameter("ordenado");
+out.println(filtro);
+out.println(formaDeFiltro);
+out.println(formaDeFiltro2);
+out.println(ordenado);
+%>
 <!DOCTYPE html>
 <html lang="en">
 <c:set var="context" value="${pageContext.request.contextPath}"/>
@@ -84,16 +93,30 @@
 		    			<h2 class="heading mb-4"><a href="#">Remeras</a></h2>
 		    			
 		    			<ul>
+		    			<%if (filtro.equals("RemeraMangalarga")){ %>
 		    					<div class="radio">
 								<li>
+ 								<input type="radio" name="filtro" value="RemeraMangalarga" checked>Manga larga</li></div>
+ 						<%}else{ %>
+ 								<div class="radio">
+								<li>
  								 <input type="radio" name="filtro" value="RemeraMangalarga">Manga larga</li></div>
- 								 
- 								 <div class="radio">
-								<li><input type="radio" name="filtro" value="RemeraMangacorta">Manga corta</li></div>
-
-
+ 						<%} %>	
+ 						
+ 						<%if (filtro.equals("RemeraMangacorta")){ %>	 
+ 								<div class="radio">
+								<li><input type="radio" name="filtro" value="RemeraMangacorta" checked>Manga corta</li></div>
+						<%}else{ %>
 								<div class="radio">
-								<li><input type="radio" name="filtro" value="RemeraMusculosa">Remera Musculosa</li></div>
+								<li><input type="radio" name="filtro" value="RemeraMangacorta">Manga corta</li></div>
+						<%} %>
+						<%if (filtro.equals("RemeraMusculosa")){ %>	 
+ 								<div class="radio">
+								<li><input type="radio" name="filtro" value="RemeraMusculosa" checked>Musculosa</li></div>
+						<%}else{ %>
+								<div class="radio">
+								<li><input type="radio" name="filtro" value="RemeraMusculosa">Musculosa</li></div>
+						<%} %>
 		    			</ul>
 		    			
 
@@ -102,73 +125,160 @@
 		    		<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Camisas</a></h2>
 		    			<ul>
+		    			<%if (filtro.equals("CamisaMangaLarga")){ %>
+		    					<div class="radio">
+								<li>
+ 								<input type="radio" name="filtro" value="CamisaMangaLarga" checked>Manga larga</li></div>
+ 						<%}else{ %>
+ 								<div class="radio">
+								<li>
+ 								 <input type="radio" name="filtro" value="CamisaMangaLarga">Manga larga</li></div>
+ 						<%} %>	
+ 						
+ 						<%if (filtro.equals("CamisaMangacorta")){ %>	 
+ 								<div class="radio">
+								<li><input type="radio" name="filtro" value="CamisaMangacorta" checked>Manga corta</li></div>
+						<%}else{ %>
 								<div class="radio">
-								<li><input type="radio" name="filtro" value="CamisaMangaLarga">Manga Larga</li></div>
-								
-									<div class="radio">
-								<li><input type="radio" name="filtro" value="CamisaMangacorta">Manga Corta</li></div>
-								
-									<div class="radio">
+								<li><input type="radio" name="filtro" value="CamisaMangacorta">Manga corta</li></div>
+						<%} %>
+						<%if (filtro.equals("CamisaElegante")){ %>	 
+ 								<div class="radio">
+								<li><input type="radio" name="filtro" value="CamisaElegante" checked>Elegante</li></div>
+						<%}else{ %>
+								<div class="radio">
 								<li><input type="radio" name="filtro" value="CamisaElegante">Elegante</li></div>
+						<%} %>
+						
 		    			</ul>
 		    		</div>
 						<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Buzos</a></h2>
 		    			<ul>
-									<div class="radio">
-								<li><input type="radio" name="filtro" value="BuzoCanguro">Canguro</li></div>
-								
-									<div class="radio">
+		    			<%if (filtro.equals("BuzoCanguro")){ %>
+		    					<div class="radio">
+								<li>
+ 								<input type="radio" name="filtro" value="BuzoCanguro" checked>Canguro</li></div>
+ 						<%}else{ %>
+ 								<div class="radio">
+								<li>
+ 								 <input type="radio" name="filtro" value="BuzoCanguro">Canguro</li></div>
+ 						<%} %>	
+ 						
+ 						<%if (filtro.equals("BuzoBasico")){ %>	 
+ 								<div class="radio">
+								<li><input type="radio" name="filtro" value="BuzoBasico" checked>Básico</li></div>
+						<%}else{ %>
+								<div class="radio">
 								<li><input type="radio" name="filtro" value="BuzoBasico">Básico</li></div>
-								
-								
-									<div class="radio">
+						<%} %>
+						<%if (filtro.equals("BuzoElegante")){ %>	 
+ 								<div class="radio">
+								<li><input type="radio" name="filtro" value="BuzoElegante" checked>Elegante</li></div>
+						<%}else{ %>
+								<div class="radio">
 								<li><input type="radio" name="filtro" value="BuzoElegante">Elegante</li></div>
+						<%} %>
 		    			</ul>
 		    		</div>
 		    		
 		    		<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Pantalon</a></h2>
 		    			<ul>
-									<div class="radio">
-								<li><input type="radio" name="filtro" value="PantalonJean">Jean</li></div>
-								
-									<div class="radio">
+		    			<%if (filtro.equals("PantalonJean")){ %>
+		    					<div class="radio">
+								<li>
+ 								<input type="radio" name="filtro" value="PantalonJean" checked>Jean</li></div>
+ 						<%}else{ %>
+ 								<div class="radio">
+								<li>
+ 								 <input type="radio" name="filtro" value="PantalonJean">Jean</li></div>
+ 						<%} %>	
+ 						
+ 						<%if (filtro.equals("PantalonJoggin")){ %>	 
+ 								<div class="radio">
+								<li><input type="radio" name="filtro" value="PantalonJoggin" checked>Joggin</li></div>
+						<%}else{ %>
+								<div class="radio">
 								<li><input type="radio" name="filtro" value="PantalonJoggin">Joggin</li></div>
-								
-									<div class="radio">
+						<%} %>
+						<%if (filtro.equals("PantalonGabardina")){ %>	 
+ 								<div class="radio">
+								<li><input type="radio" name="filtro" value="PantalonGabardina" checked>Gabardina</li></div>
+						<%}else{ %>
+								<div class="radio">
 								<li><input type="radio" name="filtro" value="PantalonGabardina">Gabardina</li></div>
+						<%} %>
 		    			</ul>
 		    		</div>
 		    		
 		    		<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Bermuda</a></h2>
 		    			<ul>
-									<div class="radio">
-								<li><input type="radio" name="filtro" value="BermudaJean">Jean</li></div>
-								
-									<div class="radio">
+		    			<%if (filtro.equals("BermudaJean")){ %>
+		    					<div class="radio">
+								<li>
+ 								<input type="radio" name="filtro" value="BermudaJean" checked>Jean</li></div>
+ 						<%}else{ %>
+ 								<div class="radio">
+								<li>
+ 								 <input type="radio" name="filtro" value="BermudaJean">Jean</li></div>
+ 						<%} %>	
+ 						
+ 						<%if (filtro.equals("BermudaJoggin")){ %>	 
+ 								<div class="radio">
+								<li><input type="radio" name="filtro" value="BermudaJoggin" checked>Joggin</li></div>
+						<%}else{ %>
+								<div class="radio">
 								<li><input type="radio" name="filtro" value="BermudaJoggin">Joggin</li></div>
-								
-									<div class="radio">
+						<%} %>
+						<%if (filtro.equals("BermudaGabardina")){ %>	 
+ 								<div class="radio">
+								<li><input type="radio" name="filtro" value="BermudaGabardina" checked>Gabardina</li></div>
+						<%}else{ %>
+								<div class="radio">
 								<li><input type="radio" name="filtro" value="BermudaGabardina">Gabardina</li></div>
+						<%} %>
 		    			</ul>
-		    		
-		    		 <input type="number" value="${formaDeFiltro}" name="formaDeFiltro">
-		    		<br>
-		    		<input type="number" value="${formaDeFiltro2}" name="formaDeFiltro2">
-		    		
+		    		<div class="sidebar-box-2">
+		    			<h2 class="heading mb-4"><a href="#">Rango</a></h2>
+		    			<label>Desde: </label>
+		    			<%if (formaDeFiltro == null){ %>
+		    		 		<input type="text" value="${formaDeFiltro}" name="formaDeFiltro"><br>
+		    		 	<%}else{ %>
+		    		 		<input type="text" value="<%out.println(formaDeFiltro);%>" name="formaDeFiltro"><br>
+		    		 	<%} %>
+		    			<label>Hasta: </label>
+		    			<%if (formaDeFiltro == null){ %>
+		    		 		<input type="text" value="${formaDeFiltro2}" name="formaDeFiltro2"><br>
+		    		 	<%}else{ %>
+		    		 		<input type="text" value="<%out.println(formaDeFiltro2);%>" name="formaDeFiltro2"><br>
+		    		 	<%} %>
+		    		</div>
 		    		
 		    		
 		    		
 		    		<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Ordenar Precio</a></h2>
 		    			<ul>
-		    			<div class="radio">
-								<li><input type="radio" name="ordenado" value="mayor">Mayor</li></div>
-								<div class="radio">
-
-								<li><input type="radio" name="ordenado" value="menor">Menor</li></div>
+		    			<%if(ordenado==null){ %>
+			    			<div class="radio">
+							<li><input type="radio" name="ordenado" value="mayor">Mayor</li></div>
+							<div class="radio">
+							<li><input type="radio" name="ordenado" value="menor">Menor</li></div>
+						<%} %>
+						<%if(ordenado.equals("mayor")){ %>
+			    			<div class="radio">
+							<li><input type="radio" name="ordenado" value="mayor" checked>Mayor</li></div>
+							<div class="radio">
+							<li><input type="radio" name="ordenado" value="menor">Menor</li></div>
+						<%} %>
+						<%if(ordenado.equals("menor")){ %>
+			    			<div class="radio">
+							<li><input type="radio" name="ordenado" value="mayor">Mayor</li></div>
+							<div class="radio">
+							<li><input type="radio" name="ordenado" value="menor" checked>Menor</li></div>
+						<%} %>
 		    			</ul>
 		    			</div>    			
 		    		
