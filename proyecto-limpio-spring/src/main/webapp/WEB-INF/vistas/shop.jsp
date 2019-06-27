@@ -111,11 +111,10 @@ String ordenado = request.getParameter("ordenado");
 							<li><input type="radio" name="ordenado" value="menor">Menor</li></div>
 							<div class="radio">
 							<li><input type="radio" style="visibility:hidden;" name="ordenado" value="sinorden"checked></li></div>
-							<button class="btn btn-primary" type="submit">Filtrar</button>
 		    			</ul>
-		    		</div>    			
-		    		
-    				
+		    		</div>
+		    		<input type="radio" name="filtro" value="%" hidden checked>
+		    		<button class="btn btn-primary" type="submit">Filtrar</button>    			
     				</form>
 		    	</div>
 		    	<%}else{ %>
@@ -317,10 +316,13 @@ String ordenado = request.getParameter("ordenado");
 							<li><input type="radio" style="visibility:hidden;"  name="ordenado" value="sinorden"></li></div>
 							
 						<%} %>
-						<button class="btn btn-primary" type="submit">Filtrar</button>
+						
 		    			</ul>
-		    			</div>    			
-		    		
+		    			</div>
+		    		<div class="sidebar-box-2">    			
+		    		<a href="${context}/shop">x Borrar filtro</a>
+		    		</div>
+					<button class="btn btn-primary" type="submit">Filtrar</button>
     				
 		    	</form>
 		    	</div>
