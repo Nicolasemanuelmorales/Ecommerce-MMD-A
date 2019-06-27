@@ -4,10 +4,6 @@ String filtro = request.getParameter("filtro");
 String formaDeFiltro = request.getParameter("formaDeFiltro");
 String formaDeFiltro2 = request.getParameter("formaDeFiltro2");
 String ordenado = request.getParameter("ordenado");
-out.println(filtro);
-out.println(formaDeFiltro);
-out.println(formaDeFiltro2);
-out.println(ordenado);
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +34,6 @@ out.println(ordenado);
     		<div class="row">
     			<div class="col-md-8 col-lg-10 order-md-last">
     				<div class="row">
-    				<h1></h1>
     				<c:forEach items="${xd}" var="i">
     				<div class="col-sm-6 col-md-6 col-lg-4 ftco-animate">
 		    				<div class="product">
@@ -88,7 +83,87 @@ out.println(ordenado);
 		    	</div>
 			
 		    	<div class="col-md-4 col-lg-2 sidebar">
-		    	<form action="${context}/shop/" method="GET">
+		    	<%if(filtro==null){ %>
+		    		<form action="${context}/shop/" method="GET">
+		    		<div class="sidebar-box-2">
+		    			<h2 class="heading mb-4"><a href="#">Remeras</a></h2>
+		    			<ul>
+	    					<div class="radio">
+							<li><input type="radio" name="filtro" value="RemeraMangalarga">Manga larga</li></div>
+							<div class="radio">
+							<li><input type="radio" name="filtro" value="RemeraMangacorta">Manga corta</li></div>
+	 						<div class="radio">
+							<li><input type="radio" name="filtro" value="RemeraMusculosa">Musculosa</li></div>
+		    			</ul>
+		    		</div>
+		    		<div class="sidebar-box-2">
+		    			<h2 class="heading mb-4"><a href="#">Camisas</a></h2>
+		    			<ul>
+			    			<div class="radio">
+							<li><input type="radio" name="filtro" value="CamisaMangaLarga">Manga larga</li></div>
+	 						<div class="radio">
+							<li><input type="radio" name="filtro" value="CamisaMangacorta">Manga corta</li></div>
+	 						<div class="radio">
+							<li><input type="radio" name="filtro" value="CamisaElegante">Elegante</li></div>
+		    			</ul>
+		    		</div>
+						<div class="sidebar-box-2">
+		    			<h2 class="heading mb-4"><a href="#">Buzos</a></h2>
+		    			<ul>
+			    			<div class="radio">
+							<li><input type="radio" name="filtro" value="BuzoCanguro">Canguro</li></div>
+	 						<div class="radio">
+							<li><input type="radio" name="filtro" value="BuzoBasico">Básico</li></div>
+							<div class="radio">
+							<li><input type="radio" name="filtro" value="BuzoElegante">Elegante</li></div>
+		    			</ul>
+		    		</div>
+		    		
+		    		<div class="sidebar-box-2">
+		    			<h2 class="heading mb-4"><a href="#">Pantalón</a></h2>
+		    			<ul>
+	    					<div class="radio">
+							<li><input type="radio" name="filtro" value="PantalonJean">Jean</li></div> 
+	 						<div class="radio">
+							<li><input type="radio" name="filtro" value="PantalonJoggin">Joggin</li></div>
+	 						<div class="radio">
+							<li><input type="radio" name="filtro" value="PantalonGabardina">Gabardina</li></div>
+		    			</ul>
+		    		</div>
+		    		
+		    		<div class="sidebar-box-2">
+		    			<h2 class="heading mb-4"><a href="#">Bermuda</a></h2>
+		    			<ul>
+	    					<div class="radio">
+							<li><input type="radio" name="filtro" value="BermudaJean">Jean</li></div> 
+	 						<div class="radio">
+							<li><input type="radio" name="filtro" value="BermudaJoggin">Joggin</li></div>	 
+	 						<div class="radio">
+							<li><input type="radio" name="filtro" value="BermudaGabardina">Gabardina</li></div>
+		    			</ul>
+		    		<div class="sidebar-box-2">
+		    			<h2 class="heading mb-4"><a href="#">Rango</a></h2>
+		    			<label>Desde: </label>
+		    		 	<input type="text" value="${formaDeFiltro}" name="formaDeFiltro"><br>
+		    		 	<label>Hasta: </label>
+		    		 	<input type="text" value="${formaDeFiltro2}" name="formaDeFiltro2"><br>
+		    		</div>
+		    		
+		    		<div class="sidebar-box-2">
+		    			<h2 class="heading mb-4"><a href="#">Ordenar Precio</a></h2>
+		    			<ul>
+			    			<div class="radio">
+							<li><input type="radio" name="ordenado" value="mayor">Mayor</li></div>
+							<div class="radio">
+							<li><input type="radio" name="ordenado" value="menor">Menor</li></div>
+		    			</ul>
+		    		</div>    			
+		    		
+    				<button type="submit">Filtrar</button>
+    				</form>
+		    	</div>
+		    	<%}else{ %>
+		    		<form action="${context}/shop/" method="GET">
 		    		<div class="sidebar-box-2">
 		    			<h2 class="heading mb-4"><a href="#">Remeras</a></h2>
 		    			
@@ -183,7 +258,7 @@ out.println(ordenado);
 		    		</div>
 		    		
 		    		<div class="sidebar-box-2">
-		    			<h2 class="heading mb-4"><a href="#">Pantalon</a></h2>
+		    			<h2 class="heading mb-4"><a href="#">Pantalón</a></h2>
 		    			<ul>
 		    			<%if (filtro.equals("PantalonJean")){ %>
 		    					<div class="radio">
@@ -285,6 +360,7 @@ out.println(ordenado);
     				<button type="submit">Filtrar</button>
 		    	</form>
 		    	</div>
+		    	<%} %>
     			</div>
 
     		</div>
