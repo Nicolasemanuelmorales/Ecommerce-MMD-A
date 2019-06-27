@@ -27,27 +27,16 @@ public class ControllerProductos {
 	@Inject
 	private ServicioProducto producto;
 	
-//	@RequestMapping(path = "/shop/{filtrar}")
-//	public ModelAndView validarProducto(@ String filtrar) {
-//		
-//		ModelMap model = new ModelMap();
-//		List<Producto> lista = producto.consultarProducto(filtrar);
-//		model.put("xd", lista);
-//		return new ModelAndView("shop", model);
-//	}
-	
-	@RequestMapping(path = "/shop/")
+
+	@RequestMapping(path = "/shop")
 	public ModelAndView filtrarPor(@RequestParam (required=false) String filtro, @RequestParam(required=false) Double formaDeFiltro,@RequestParam(required=false) Double formaDeFiltro2,@RequestParam(required=false) String ordenado) {
+		
 		ModelMap model = new ModelMap();
-		System.out.println("---------------------------------");
-		System.out.println("producto: " + filtro);
-		 if(filtro == null){
+				 
+		if(filtro == null){
 			filtro = "%"; 
 		 }	
-		 
-		 //System.out.println(filtro);
-		 //System.out.println(formaDeFiltro);
-		 
+	 
 		 System.out.println("desde: "+formaDeFiltro);
 		 if(formaDeFiltro == null){
 			 formaDeFiltro= 0.0;
@@ -58,12 +47,10 @@ public class ControllerProductos {
 			 formaDeFiltro2 = 100000.0;
 		 }
 		 
-		 System.out.println("Ordenado por: "+ ordenado);
-
 		 List<Producto> lista = producto.filtrarProductoPor(filtro,formaDeFiltro,formaDeFiltro2,ordenado);
 		 
-		model.put("xd", lista);
-		return new ModelAndView("shop", model);
+		 model.put("xd", lista);
+		 return new ModelAndView("shop", model);
 	}
 	
 }

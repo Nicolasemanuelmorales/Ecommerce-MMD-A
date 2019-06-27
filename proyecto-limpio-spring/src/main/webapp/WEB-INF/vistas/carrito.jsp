@@ -95,9 +95,6 @@
 						      
 						      </c:forEach>
 
-
-
-
 						    </tbody>
 						  </table>
 					  </div>
@@ -109,7 +106,7 @@
     					<h3>Total de la compra</h3>
     					<p class="d-flex">
     						<span>Subtotal</span>
-    						<span>$20.60</span>
+    						<span>$ ${total}</span>
     					</p>
     					<p class="d-flex">
     						<span>Delivery</span>

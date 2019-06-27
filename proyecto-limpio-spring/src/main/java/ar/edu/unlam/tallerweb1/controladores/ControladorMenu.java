@@ -12,6 +12,8 @@ import ar.edu.unlam.tallerweb1.modelo.Producto;
 
 @Controller
 public class ControladorMenu {
+	
+	private Integer contador= 1;
 
 	@RequestMapping(path = "/index", method = RequestMethod.GET)
 	public ModelAndView irAIndex(@ModelAttribute("producto") Producto producto){
@@ -39,7 +41,9 @@ public class ControladorMenu {
 		HttpSession session = request.getSession();
 		
 		model.put("xd", session.getAttribute("articulosDeCarrito"));
+		model.put("total", session.getAttribute("totalcarrito"));
 		return new ModelAndView("carrito", model);
 	}
 	
+		
 }

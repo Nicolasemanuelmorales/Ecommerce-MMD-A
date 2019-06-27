@@ -4,6 +4,12 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+.asd{
+  width: 30% !important;
+  height: 100% !important;
+  border: solid 1px #FFA45C;
+}
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;

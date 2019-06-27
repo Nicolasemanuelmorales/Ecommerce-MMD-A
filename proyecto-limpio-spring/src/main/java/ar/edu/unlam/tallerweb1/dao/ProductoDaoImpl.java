@@ -33,8 +33,11 @@ public class ProductoDaoImpl implements ProductoDao{
 	@Override
 	public List<Producto> filtrarProductoPor(String filtro, Double formaDeFiltro, Double formaDeFiltro2, String ordenado) {
 		String mayor = "mayor";
+		String menor = "menor";
+		String sinorden = "sinorden";
+		
 		if(mayor.equals(ordenado)){
-		System.out.println("Entre al if");
+		
 		final Session session = sessionFactory.getCurrentSession();
 		return (List<Producto>) session
 		 .createCriteria(Producto.class)
@@ -43,18 +46,35 @@ public class ProductoDaoImpl implements ProductoDao{
 		.add(Restrictions.like("p.nombre",filtro))
 	    .add( Restrictions.between("precio", formaDeFiltro, formaDeFiltro2))
 	    .list();
-	}else{
-		System.out.println("Entre al else");
+		
+	}if(menor.equals(ordenado)){
+		
 		final Session session = sessionFactory.getCurrentSession();
 		return (List<Producto>) session
-		 .createCriteria(Producto.class)
-		 .createAlias("tipo", "p")
+		.createCriteria(Producto.class)
+		.createAlias("tipo", "p")
 		.addOrder(Order.asc("precio"))
 		.add(Restrictions.like("p.nombre",filtro))
 	    .add( Restrictions.between("precio", formaDeFiltro, formaDeFiltro2))
 	    .list();
-	}
-	}
-	
-
-}
+		
+	}if(sinorden.equals(ordenado)){
+		
+		final Session session = sessionFactory.getCurrentSession();
+		return (List<Producto>) session
+		.createCriteria(Producto.class)
+		.createAlias("tipo", "p")
+		.add(Restrictions.like("p.nombre",filtro))
+	    .add( Restrictions.between("precio", formaDeFiltro, formaDeFiltro2))
+	    .list();
+		
+	}else{
+		
+		final Session session = sessionFactory.getCurrentSession();
+		return (List<Producto>) session
+		.createCriteria(Producto.class)
+		.createAlias("tipo", "p")
+		.add(Restrictions.like("p.nombre",filtro))
+		.list();	
+		
+		}}}

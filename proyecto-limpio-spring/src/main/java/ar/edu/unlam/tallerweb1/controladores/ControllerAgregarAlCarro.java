@@ -17,6 +17,7 @@ import ar.edu.unlam.tallerweb1.servicios.ServicioAgregarAlCarro;
 public class ControllerAgregarAlCarro {
 
 	private List<Producto> listaPrincipal = new ArrayList();
+	private Double total=0.0;
 	
 	@Inject
 	private ServicioAgregarAlCarro prod;
@@ -25,15 +26,20 @@ public class ControllerAgregarAlCarro {
 	public ModelAndView agregarAlCarro(@PathVariable Long id, HttpServletRequest request) {
 		
 		ModelMap model = new ModelMap();
+		
 		Producto produc = prod.consultarProductoPorId(id);
 		
-		this.listaPrincipal.add(produc);
+		total+=produc.getPrecio();
 		
+				
+		this.listaPrincipal.add(produc);
+				
 		HttpSession session = request.getSession();
 		session.setAttribute("articulosDeCarrito",this.listaPrincipal);
-		
+		session.setAttribute("totalcarrito",this.total);
 		
 		model.put("xd", session.getAttribute("articulosDeCarrito"));
+		model.put("total", session.getAttribute("totalcarrito"));
 		return new ModelAndView("carrito", model);
 	}
 	
