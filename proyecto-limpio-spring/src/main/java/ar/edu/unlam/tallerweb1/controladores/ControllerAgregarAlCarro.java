@@ -16,8 +16,9 @@ import ar.edu.unlam.tallerweb1.servicios.ServicioAgregarAlCarro;
 @Controller
 public class ControllerAgregarAlCarro {
 
-	private List<Producto> listaPrincipal = new ArrayList();
+	private List<Producto> listaPrincipal = new ArrayList<Producto>();
 	private Double total=0.0;
+	private Long auxiliar;
 	
 	@Inject
 	private ServicioAgregarAlCarro prod;
@@ -26,12 +27,26 @@ public class ControllerAgregarAlCarro {
 	public ModelAndView agregarAlCarro(@PathVariable Long id, HttpServletRequest request) {
 		
 		ModelMap model = new ModelMap();
-		
 		Producto produc = prod.consultarProductoPorId(id);
 		
-		total+=produc.getPrecio();
+		if(id.equals(auxiliar)){
+			
+			total+=produc.getPrecio();
+			HttpSession session = request.getSession();
+			session.setAttribute("articulosDeCarrito",this.listaPrincipal);
+			session.setAttribute("totalcarrito",this.total);
+			
+			model.put("xd", session.getAttribute("articulosDeCarrito"));
+			model.put("total", session.getAttribute("totalcarrito"));
+			model.put("id", id);
+			
+			return new ModelAndView("carrito", model);
+			
+		}else{	
 		
-				
+		auxiliar=id;
+		total+=produc.getPrecio();
+						
 		this.listaPrincipal.add(produc);
 				
 		HttpSession session = request.getSession();
@@ -40,7 +55,9 @@ public class ControllerAgregarAlCarro {
 		
 		model.put("xd", session.getAttribute("articulosDeCarrito"));
 		model.put("total", session.getAttribute("totalcarrito"));
-		return new ModelAndView("carrito", model);
+		model.put("id", id);
+		
+		return new ModelAndView("carrito", model);}
 	}
 	
 }
