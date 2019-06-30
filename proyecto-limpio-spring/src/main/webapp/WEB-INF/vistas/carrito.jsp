@@ -38,6 +38,10 @@
 						        <th>Total</th>
 						      </tr>
 						    </thead>
+						    
+<!--  iniciamos el contador  -->
+<c:set var="contador" value="${1}" />
+
 						    <tbody>
 						    
 						    <c:forEach items="${xd}" var="i">
@@ -54,23 +58,23 @@
 						        	
 						        	
 						        	<div style="color: #A29C9A;">MATERIAL    ${i.material}</div>
+						        	<div id="stock${contador }">${i.stock }</div>
 						        	
 						        </td>
 						        
 						        
-						        <td class="price">$ ${i.precio}</td>
-						        
+						        <td id="precio${contador }" data-value="${i.precio }">$ ${i.precio }</td>
 						        <td>
 						
 							<div class="input-group col-md-12 mb-15" >
 				             	<span class="input-group-btn mr-2">
-				                	<button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
+				                	<button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="" onclick="restar(${contador})">
 				                   <i class="ion-ios-remove"></i>
 				                	</button>
 				            		</span>
-				             	<input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="${i.stock}">
+				             	<input type="text" id="quantity${contador}" name="quantity" class="form-control input-number" value="0" min="0" max="${i.stock}">
 				             	<span class="input-group-btn ml-2">
-				                	<button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+				                	<button type="button" class="quantity-right-plus btn" data-type="plus" data-field="" onclick="sumar(${contador})">
 				                     <i class="ion-ios-add"></i>
 				                 </button>
 				             	</span>
@@ -92,7 +96,8 @@
 									</div>
 						        </td>
 						      </tr><!-- END TR-->
-						      
+<!--  incrementamos el contador  -->
+<c:set var="contador" value="${contador + 1}" />
 						      </c:forEach>
 
 						    </tbody>
@@ -106,7 +111,7 @@
     					<h3>Total de la compra</h3>
     					<p class="d-flex">
     						<span>Subtotal</span>
-    						<span>$ ${total}</span>
+    						<span id="subtotal">$0.00</span>
     					</p>
     					<p class="d-flex">
     						<span>Delivery</span>
@@ -116,7 +121,7 @@
     					<hr>
     					<p class="d-flex total-price">
     						<span>Total</span>
-    						<span>$17.60</span>
+    						<span>$ <span id="total">0</span></span>
     					</p>
     				</div>
     				<p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Realizar compra</a></p>
@@ -130,42 +135,41 @@
 	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 	<%@include file='footer_script.jsp' %>
 
-  <script>
-		$(document).ready(function(){
-
-		var quantitiy=0;
-		   $('.quantity-right-plus').click(function(e){
-		        
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
-		        
-		        // If is not undefined
-		            
-		            $('#quantity').val(quantity + 1);
-
-		          
-		            // Increment
-		        
-		    });
-
-		     $('.quantity-left-minus').click(function(e){
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
-		        
-		        // If is not undefined
-		      
-		            // Increment
-		            if(quantity>0){
-		            $('#quantity').val(quantity - 1);
-		            }
-		    });
-		    
-		});
-	</script>
+  
+   <script> 
+    var sub=0.0;
+    function sumar(orden){
+    	//aumenta cantidad
+		var cantidad = parseInt($('#quantity'+orden).val()); 
+		$('#quantity'+orden).val(cantidad + 1);
+		cantidad = parseInt($('#quantity'+orden).val()); 
+		//baja stock
+		var stock = parseInt($('#stock'+orden).html());
+		$('#stock'+orden).html(stock - 1);
+		
+		//aumenta subtotal
+		var precio = parseFloat($('#precio'+orden).data("value"));
+		sub = sub+precio;
+		$('#subtotal').html("$"+sub);
+    };
     
+    //hay que generar la suma de los dos productos x estos acumulan por separado
+    
+    function restar(orden){
+		var cantidad = parseInt($('#quantity'+orden).val()); 
+		if(cantidad>0){
+			$('#quantity'+orden).val(cantidad - 1);
+			var stock = parseInt($('#stock'+orden).html());
+			$('#stock'+orden).html(stock + 1);
+			
+			//aumenta subtotal
+			var precio = parseFloat($('#precio'+orden).data("value"));
+			sub = sub-precio;
+			$('#subtotal').html("$"+sub);
+		}
+		
+		
+    };
+    </script>
   </body>
 </html>
