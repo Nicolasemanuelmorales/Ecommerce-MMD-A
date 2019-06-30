@@ -37,12 +37,10 @@ public class ControllerProductos {
 			filtro = "%"; 
 		 }	
 	 
-		 System.out.println("desde: "+formaDeFiltro);
 		 if(formaDeFiltro == null){
 			 formaDeFiltro= 0.0;
 		 }
 		 
-		 System.out.println("hasta: "+formaDeFiltro2);
 		 if(formaDeFiltro2 == null){
 			 formaDeFiltro2 = 100000.0;
 		 }

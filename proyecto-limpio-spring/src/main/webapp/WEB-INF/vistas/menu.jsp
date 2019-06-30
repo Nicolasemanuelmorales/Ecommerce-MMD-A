@@ -1,3 +1,8 @@
+<%
+HttpSession s = request.getSession(false); 
+Integer contCart = (Integer)s.getAttribute("contCart");
+//out.println("contador carrito: " + contCart);
+%>
 <c:set var="context" value="${pageContext.request.contextPath}"/>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	<div class="container">
@@ -12,7 +17,7 @@
 	          <li class="nav-item"><a href="${context}/about" class="nav-link">Nosotros</a></li>
 	          <li class="nav-item"><a href="${context}/blog" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="${context}/contact" class="nav-link">Contacto</a></li>
-	          <li class="nav-item cta cta-colored"><a href="${context}/cart" class="nav-link"><span class="icon-shopping_cart"></span>[ ${numeroDeProductos} ]</a></li>
+	          <li class="nav-item cta cta-colored"><a href="${context}/cart" class="nav-link"><span class="icon-shopping_cart"></span>[ <% out.println(contCart);%> ]</a></li>
 	        </ul>
 	   	</div>
 	</div>

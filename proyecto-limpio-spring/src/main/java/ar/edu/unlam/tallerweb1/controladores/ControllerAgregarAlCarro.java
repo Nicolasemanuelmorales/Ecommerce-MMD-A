@@ -19,6 +19,7 @@ public class ControllerAgregarAlCarro {
 	private List<Producto> listaPrincipal = new ArrayList<Producto>();
 	private Double total=0.0;
 	private Long auxiliar;
+	private Integer contCart = 0;
 	
 	@Inject
 	private ServicioAgregarAlCarro prod;
@@ -35,7 +36,6 @@ public class ControllerAgregarAlCarro {
 			HttpSession session = request.getSession();
 			session.setAttribute("articulosDeCarrito",this.listaPrincipal);
 			session.setAttribute("totalcarrito",this.total);
-			
 			model.put("xd", session.getAttribute("articulosDeCarrito"));
 			model.put("total", session.getAttribute("totalcarrito"));
 			model.put("id", id);
@@ -52,6 +52,10 @@ public class ControllerAgregarAlCarro {
 		HttpSession session = request.getSession();
 		session.setAttribute("articulosDeCarrito",this.listaPrincipal);
 		session.setAttribute("totalcarrito",this.total);
+		
+		//suma productos al contador de carrito
+		contCart++;
+		session.setAttribute("contCart",this.contCart);
 		
 		model.put("xd", session.getAttribute("articulosDeCarrito"));
 		model.put("total", session.getAttribute("totalcarrito"));
