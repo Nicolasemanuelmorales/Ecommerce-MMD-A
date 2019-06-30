@@ -115,13 +115,13 @@
     					</p>
     					<p class="d-flex">
     						<span>Delivery</span>
-    						<span>$0.00</span>
+    						<span id="delivery">$0.00</span>
     					</p>
     					
     					<hr>
     					<p class="d-flex total-price">
     						<span>Total</span>
-    						<span>$ <span id="total">0</span></span>
+    						<span id="total">$0.00</span>
     					</p>
     				</div>
     				<p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Realizar compra</a></p>
@@ -138,6 +138,8 @@
   
    <script> 
     var sub=0.0;
+    var delivery = 0.0;
+    var total = 0.0;
     function sumar(orden){
     	//aumenta cantidad
 		var cantidad = parseInt($('#quantity'+orden).val()); 
@@ -151,6 +153,15 @@
 		var precio = parseFloat($('#precio'+orden).data("value"));
 		sub = sub+precio;
 		$('#subtotal').html("$"+sub);
+		
+		//calcula el valor del delivery, si >=1000 se le cobra el 10%
+		if(sub>=1000){
+			delivery = sub*0.1;
+			$('#delivery').html("$"+delivery);
+		}
+		
+		total = sub + delivery;
+		$('#total').html("$"+total);
     };
     
     //hay que generar la suma de los dos productos x estos acumulan por separado
