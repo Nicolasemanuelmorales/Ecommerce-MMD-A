@@ -14,10 +14,14 @@ Integer contCart = (Integer)s.getAttribute("contCart");
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item"><a href="${context}/index" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="${context}/shop" class="nav-link">Productos</a></li>
-	          <li class="nav-item"><a href="${context}/about" class="nav-link">Nosotros</a></li>
-	          <li class="nav-item"><a href="${context}/blog" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="${context}/contact" class="nav-link">Contacto</a></li>
-	          <li class="nav-item cta cta-colored"><a href="${context}/cart" class="nav-link"><span class="icon-shopping_cart"></span>[ <% out.println(contCart);%> ]</a></li>
+	          
+	          <%if (contCart == null){ %>
+			<li class="nav-item cta cta-colored"><a href="${context}/cart" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+ 						<%}else{ %>
+			<li class="nav-item cta cta-colored"><a href="${context}/cart" class="nav-link"><span class="icon-shopping_cart"></span>[ <% out.println(contCart);%> ]</a></li>
+ 						<%} %>	
+	          
 	        </ul>
 	   	</div>
 	</div>

@@ -20,6 +20,20 @@
 
 	<!--Se indica que el transaction manager a utilizar en la capa de servicios es el bean declarado en hibernateContext.xml-->
 	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	  <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+    <property name="host" value="smtp.gmail.com" />
+    <property name="port" value="587" />
+    <property name="username" value="ecommerce.mmda@gmail.com" />
+    <property name="password" value="admin-123" />
+    <property name="javaMailProperties">
+      <props>
+        <prop key="mail.transport.protocol">smtp</prop>
+        <prop key="mail.smtp.auth">true</prop>
+        <prop key="mail.smtp.starttls.enable">true</prop>
+      </props>
+    </property>
+  </bean>
 
 	<!--Se indican qué paquetes debe escanear Spring al levantar el contexto para encontrar componentes, -->
 	<!--esto es clases anotadas como @Controller, @Service o @Repository-->

@@ -6,9 +6,9 @@
               <h2>Recibe nuestras últimas noticias</h2>
               <div class="row d-flex justify-content-center mt-5">
                 <div class="col-md-8">
-                  <form action="#" class="subscribe-form">
+                  <form action="subscribirte" method="GET"  class="subscribe-form">
                     <div class="form-group d-flex">
-                      <input type="text" class="form-control" placeholder="Ingrese su E-mail">
+                      <input type="text" name="correo" class="form-control" placeholder="Ingrese su E-mail">
                       <input type="submit" value="Subscribirse" class="submit px-3">
                     </div>
                   </form>
