@@ -25,5 +25,13 @@ public class ServicioProductoImpl implements ServicioProducto{
 	public List<Producto> filtrarProductoPor(String filtro, Double formaDeFiltro, Double formaDeFiltro2, String ordenado) {
 		return servicioProductoDao.filtrarProductoPor(filtro, formaDeFiltro, formaDeFiltro2, ordenado);
 	}
+	@Override
+	public List<Producto> traerFavoritos() {
+		return servicioProductoDao.traerFavoritos();
+	}
+	@Override
+	public Producto consultarProductoPorId(Long id) {
+		return servicioProductoDao.consultarProductoPorId(id);
+	}
 	
 }

@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unlam.tallerweb1.modelo.Producto;
-
+import ar.edu.unlam.tallerweb1.modelo.Tipo;
+import ar.edu.unlam.tallerweb1.servicios.ServicioAgregarAlCarro;
 import ar.edu.unlam.tallerweb1.servicios.ServicioProducto;
 
 @Controller
@@ -26,7 +27,8 @@ public class ControllerProductos {
 
 	@Inject
 	private ServicioProducto producto;
-	
+	@Inject
+	private ServicioAgregarAlCarro prod;
 
 	@RequestMapping(path = "/shop")
 	public ModelAndView filtrarPor(@RequestParam (required=false) String filtro, @RequestParam(required=false) Double formaDeFiltro,@RequestParam(required=false) Double formaDeFiltro2,@RequestParam(required=false) String ordenado) {
@@ -51,4 +53,26 @@ public class ControllerProductos {
 		 return new ModelAndView("shop", model);
 	}
 	
+	@RequestMapping(path = "/favoritos")
+	public ModelAndView misFavoritos(){
+		
+		ModelMap model = new ModelMap();
+		
+		List<Producto> lista = producto.traerFavoritos();
+		model.put("favoritos", lista);
+		return new ModelAndView("favoritos",model);
+	}
+	
+	@RequestMapping(path = "/cambiarFavorito/{id}")
+	public ModelAndView misFavoritos(@PathVariable  Long id){
+		
+		ModelMap model = new ModelMap();
+		Producto miProducto = producto.consultarProductoPorId(id);
+		
+		miProducto.setFavorito("true");
+		miProducto.getFavorito();
+		System.out.println(miProducto.getFavorito());
+		
+		return new ModelAndView("redirect:/favoritos",model);
+	}
 }

@@ -77,4 +77,32 @@ public class ProductoDaoImpl implements ProductoDao{
 		.add(Restrictions.like("p.nombre",filtro))
 		.list();	
 		
-		}}}
+		}}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Producto> traerFavoritos() {
+		final Session session = sessionFactory.getCurrentSession();
+		return (List<Producto>) session
+		.createCriteria(Producto.class)
+		.add(Restrictions.like("favorito","true"))
+		.list();	
+	}
+
+	@Override
+	public Producto consultarProductoPorId(Long id) {
+		
+		final Session session = sessionFactory.getCurrentSession();
+	
+		return (Producto) session
+				.createCriteria(Producto.class)
+				.add(Restrictions.eq("id",id))
+				.uniqueResult()	;
+		
+	}
+	
+	
+
+
+
+}

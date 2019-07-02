@@ -15,7 +15,7 @@ Integer contCart = (Integer)s.getAttribute("contCart");
 	          <li class="nav-item"><a href="${context}/index" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="${context}/shop" class="nav-link">Productos</a></li>
 	          <li class="nav-item"><a href="${context}/contact" class="nav-link">Contacto</a></li>
-	          
+	          <li class="nav-item"><a href="${context}/favoritos" class="nav-link">Mis Favoritos</a></li>
 	          <%if (contCart == null){ %>
 			<li class="nav-item cta cta-colored"><a href="${context}/cart" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
  						<%}else{ %>
