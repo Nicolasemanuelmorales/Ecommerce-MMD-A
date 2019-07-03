@@ -10,7 +10,16 @@ String ordenado = request.getParameter("ordenado");
 <c:set var="context" value="${pageContext.request.contextPath}"/>
  <head>
     <title>MMD'A</title>
-    <%@include file='head.jsp'%>    
+    <%@include file='head.jsp'%> 
+    <style>
+    	.per{
+    		background-color:#fff;
+    		padding: 1em 0 1em 2em;
+    		border-radius: 25px;
+    		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+    		max-height:1300px;
+    	}
+    </style>   
   </head>
   <body class="goto-here">
 	<%@include file='barra_superior.jsp'%>
@@ -34,7 +43,7 @@ String ordenado = request.getParameter("ordenado");
     		<div class="row">
     			
 			
-		    	<div class="col-md-4 col-lg-2 sidebar">
+		    	<div class="col-md-4 col-lg-2 sidebar per">
 		    	<%if(filtro==null){ %>
 		    		<form action="${context}/shop" method="GET">
 		    		<div class="sidebar-box-2">
@@ -316,14 +325,13 @@ String ordenado = request.getParameter("ordenado");
 							<li><input type="radio" style="visibility:hidden;"  name="ordenado" value="sinorden"></li></div>
 							
 						<%} %>
-						
+							<div class="sidebar-box-2">    			
+					    		<a href="${context}/shop">x Borrar filtro</a>
+								<button class="btn btn-primary" type="submit">Filtrar</button>
+	    					</div>
 		    			</ul>
 		    			</div>
-		    		<div class="sidebar-box-2">    			
-		    		<a href="${context}/shop">x Borrar filtro</a>
-		    		</div>
-					<button class="btn btn-primary" type="submit">Filtrar</button>
-    				
+		    		
 		    	</form>
 		    	</div>
 		    	<%} %>
