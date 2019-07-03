@@ -12,14 +12,11 @@ import ar.edu.unlam.tallerweb1.SpringTest;
 import ar.edu.unlam.tallerweb1.modelo.Producto;
 import ar.edu.unlam.tallerweb1.modelo.Tipo;
 import ar.edu.unlam.tallerweb1.dao.BuscarDao;
-import ar.edu.unlam.tallerweb1.dao.BuscarDaoImpl;
 
 public class BuscarDaoTest extends SpringTest{
 	
 	@Inject
 	private BuscarDao dao;
-	@Inject
-	private BuscarDaoImpl dao2;
 	
 	@Test @Transactional @Rollback
 	

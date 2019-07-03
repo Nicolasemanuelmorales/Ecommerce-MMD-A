@@ -1,18 +1,11 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.junit.runner.Request;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 
@@ -22,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unlam.tallerweb1.modelo.Producto;
-import ar.edu.unlam.tallerweb1.modelo.Tipo;
-import ar.edu.unlam.tallerweb1.servicios.ServicioAgregarAlCarro;
 import ar.edu.unlam.tallerweb1.servicios.ServicioProducto;
 
 @Controller
