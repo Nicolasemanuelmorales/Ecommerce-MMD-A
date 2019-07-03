@@ -82,10 +82,11 @@ public class ProductoDaoImpl implements ProductoDao{
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Producto> traerFavoritos() {
+		
 		final Session session = sessionFactory.getCurrentSession();
 		return (List<Producto>) session
 		.createCriteria(Producto.class)
-		.add(Restrictions.like("favorito","true"))
+		.add(Restrictions.eq("favorito","true"))
 		.list();	
 	}
 
@@ -100,6 +101,7 @@ public class ProductoDaoImpl implements ProductoDao{
 				.uniqueResult()	;
 		
 	}
+
 	
 	
 

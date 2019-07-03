@@ -7,8 +7,12 @@ import java.util.Comparator;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
-
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.junit.runner.Request;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 
@@ -27,8 +31,7 @@ public class ControllerProductos {
 
 	@Inject
 	private ServicioProducto producto;
-	@Inject
-	private ServicioAgregarAlCarro prod;
+
 
 	@RequestMapping(path = "/shop")
 	public ModelAndView filtrarPor(@RequestParam (required=false) String filtro, @RequestParam(required=false) Double formaDeFiltro,@RequestParam(required=false) Double formaDeFiltro2,@RequestParam(required=false) String ordenado) {
@@ -54,7 +57,7 @@ public class ControllerProductos {
 	}
 	
 	@RequestMapping(path = "/favoritos")
-	public ModelAndView misFavoritos(){
+	public ModelAndView misFavoritos(HttpServletRequest request){
 		
 		ModelMap model = new ModelMap();
 		
@@ -64,15 +67,36 @@ public class ControllerProductos {
 	}
 	
 	@RequestMapping(path = "/cambiarFavorito/{id}")
-	public ModelAndView misFavoritos(@PathVariable  Long id){
+	public ModelAndView misFavoritos(@PathVariable  Long id, HttpServletRequest request){
+					   
 		
 		ModelMap model = new ModelMap();
 		Producto miProducto = producto.consultarProductoPorId(id);
-		
+		//System.out.println(miProducto.getFavorito());
 		miProducto.setFavorito("true");
-		miProducto.getFavorito();
-		System.out.println(miProducto.getFavorito());
+
+		//System.out.println(miProducto.getFavorito());
 		
+		request.getSession().setAttribute("favorito", miProducto.getFavorito());
+		
+		//System.out.println(miProducto.getFavorito());
+		return new ModelAndView("redirect:/favoritos",model);
+	}
+	
+	@RequestMapping(path = "/cambiarFavoritoFalse/{id}")
+	public ModelAndView misFavoritosFalse(@PathVariable  Long id, HttpServletRequest request){
+					   
+		
+		ModelMap model = new ModelMap();
+		Producto miProducto = producto.consultarProductoPorId(id);
+		//System.out.println(miProducto.getFavorito());
+		miProducto.setFavorito("false");
+
+		//System.out.println(miProducto.getFavorito());
+		
+		request.getSession().setAttribute("favorito", miProducto.getFavorito());
+		
+		//System.out.println(miProducto.getFavorito());
 		return new ModelAndView("redirect:/favoritos",model);
 	}
 }

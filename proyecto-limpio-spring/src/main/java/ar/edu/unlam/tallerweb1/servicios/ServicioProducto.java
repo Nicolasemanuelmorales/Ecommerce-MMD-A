@@ -14,5 +14,5 @@ public interface ServicioProducto {
 	List<Producto> traerFavoritos();
 
 	Producto consultarProductoPorId(Long id);
-	
+
 }
