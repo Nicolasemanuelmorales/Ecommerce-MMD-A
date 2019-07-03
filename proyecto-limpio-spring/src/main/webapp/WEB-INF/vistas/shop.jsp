@@ -15,10 +15,14 @@ String ordenado = request.getParameter("ordenado");
     	.per{
     		background-color:#fff;
     		padding: 1em 0 1em 2em;
-    		border-radius: 25px;
-    		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
     		max-height:1300px;
     	}
+    	
+    	.product{
+       box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.1) !important;
+}
+    	
     </style>   
   </head>
   <body class="goto-here">
@@ -363,10 +367,10 @@ String ordenado = request.getParameter("ordenado");
 			    							</p>
 			    						</div>
 			    					</div>
-			    					<p class="bottom-area d-flex px-3">
-			    						<a href="${context}/agregarAlCarro/${i.id}" class="add-to-cart text-center py-2">Carro<span><i class="ion-ios-cart ml-1"></i></span></a>
+			    					<p class="bottom-area d-flex px-4">
+			    						<a href="${context}/agregarAlCarro/${i.id}" class="add-to-cart text-center py-2 mr-1">Carro<span><i class="ion-ios-cart ml-1"></i></span></a>
 		    							<a href="${context}/detalleProducto/${i.id}/${i.tipo.nombre}" class="buy-now text-center py-2 mr-1"><span>Detalle<i class="ion-ios-add ml-1"></i></span></a>
-		    						    <a href="${context}/cambiarFavorito/${i.id}" class="buy-now text-center py-2 mr-1"><span><i class="ion-ios-heart ml-1"></i></span></a>
+		    						    <a href="${context}/cambiarFavorito/${i.id}" class="add-to-cart text-center py-2 mr-1"><span><i class="ion-ios-heart ml-1"></i></span></a>
 		    						</p>
 		    					</div>
 		    				</div>
