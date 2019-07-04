@@ -1,17 +1,11 @@
 package ar.edu.unlam.tallerweb1.servicios;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.*;
-
 import java.util.List;
-
 import javax.inject.Inject;
-
-import org.assertj.core.api.EnumerableAssert;
 import org.junit.Test;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
-
 import ar.edu.unlam.tallerweb1.SpringTest;
 import ar.edu.unlam.tallerweb1.modelo.Producto;
 import ar.edu.unlam.tallerweb1.modelo.Tipo;
