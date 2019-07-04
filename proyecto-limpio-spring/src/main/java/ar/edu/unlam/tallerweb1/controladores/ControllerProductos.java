@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -46,48 +47,78 @@ public class ControllerProductos {
 		 model.put("xd", lista);
 		 return new ModelAndView("shop", model);
 	}
+	@RequestMapping(path = "/favoritos/{id}")	
+	public ModelAndView misFavoritos(@PathVariable  Long id,HttpServletRequest request){
+		
+		HttpSession session = request.getSession();
+		ModelMap model = new ModelMap();
+		
+		Producto miProducto = producto.consultarProductoPorId(id);
+		
+		System.out.println(miProducto.getFavorito());
+		
+		String favorito = miProducto.getFavorito();
+		
+		if(favorito.equals("false")){
+			
+			miProducto.setFavorito("true");
+
+			session.setAttribute("favorito", miProducto.getFavorito());
+			
+			System.out.println(miProducto.getFavorito());
+			
+			List<Producto> lista = producto.traerFavoritos();
+			
+			model.put("favoritos", lista);
+			model.put("id", id);
+			return new ModelAndView("favoritos",model);
+			
+		}else{
+			
+			miProducto.setFavorito("false");
+
+			session.setAttribute("favorito", miProducto.getFavorito());
+			
+			System.out.println(miProducto.getFavorito());
+			
+			List<Producto> lista = producto.traerFavoritos();
+			
+			model.put("favoritos", lista);
+			model.put("id", id);
+			return new ModelAndView("favoritos",model);
+			
+		}
+		
+
+	}
+	
+//	@RequestMapping(path = "/favoritos/{id}")
+//	public ModelAndView misFavoritos(@PathVariable  Long id, HttpServletRequest request){
+//					   
+//		HttpSession session = request.getSession();
+//		ModelMap model = new ModelMap();
+//		Producto miProducto = producto.consultarProductoPorId(id);
+//		//System.out.println(miProducto.getFavorito());
+//		miProducto.setFavorito("true");
+//
+//		//System.out.println(miProducto.getFavorito());
+//		
+//		session.setAttribute("favorito", miProducto.getFavorito());
+//		
+//		model.put("favorito",miProducto);
+//		
+//		//System.out.println(miProducto.getFavorito());
+//		return new ModelAndView("redirect:/favoritos",model);
+//	}
 	
 	@RequestMapping(path = "/favoritos")
-	public ModelAndView misFavoritos(HttpServletRequest request){
-		
-		ModelMap model = new ModelMap();
-		
+	public ModelAndView misFavoritosFalse(HttpServletRequest request){
+					   
+		ModelMap model = new ModelMap();	
 		List<Producto> lista = producto.traerFavoritos();
-		model.put("favoritos", lista);
+
+		model.put("favoritos",lista);
+		
 		return new ModelAndView("favoritos",model);
-	}
-	
-	@RequestMapping(path = "/cambiarFavorito/{id}")
-	public ModelAndView misFavoritos(@PathVariable  Long id, HttpServletRequest request){
-					   
-		
-		ModelMap model = new ModelMap();
-		Producto miProducto = producto.consultarProductoPorId(id);
-		//System.out.println(miProducto.getFavorito());
-		miProducto.setFavorito("true");
-
-		//System.out.println(miProducto.getFavorito());
-		
-		request.getSession().setAttribute("favorito", miProducto.getFavorito());
-		
-		//System.out.println(miProducto.getFavorito());
-		return new ModelAndView("redirect:/favoritos",model);
-	}
-	
-	@RequestMapping(path = "/cambiarFavoritoFalse/{id}")
-	public ModelAndView misFavoritosFalse(@PathVariable  Long id, HttpServletRequest request){
-					   
-		
-		ModelMap model = new ModelMap();
-		Producto miProducto = producto.consultarProductoPorId(id);
-		//System.out.println(miProducto.getFavorito());
-		miProducto.setFavorito("false");
-
-		//System.out.println(miProducto.getFavorito());
-		
-		request.getSession().setAttribute("favorito", miProducto.getFavorito());
-		
-		//System.out.println(miProducto.getFavorito());
-		return new ModelAndView("redirect:/favoritos",model);
 	}
 }

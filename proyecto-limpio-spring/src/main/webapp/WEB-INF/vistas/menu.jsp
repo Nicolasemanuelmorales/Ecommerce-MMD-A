@@ -21,7 +21,7 @@ Integer contCart = (Integer)s.getAttribute("contCart");
  						<%}else{ %>
 			<li class="nav-item cta cta-colored"><a href="${context}/cart" class="nav-link"><span class="icon-shopping_cart"></span>[ <% out.println(contCart);%> ]</a></li>
  						<%} %>	
-	          
+	         <li class="nav-item"><a href="${context}/login" class="nav-link">Ingresar</a></li>  
 	        </ul>
 	   	</div>
 	</div>

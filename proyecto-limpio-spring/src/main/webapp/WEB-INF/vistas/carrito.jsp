@@ -124,7 +124,11 @@
     						<span id="total">$0.00</span>
     					</p>
     				</div>
+    				<%if (contCart == null){ %>
+    				<p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4 disabled">Realizar compra</a></p>
+    				<%}else{ %>
     				<p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Realizar compra</a></p>
+    				<%}%>
     			</div>
     		</div>
 			</div>

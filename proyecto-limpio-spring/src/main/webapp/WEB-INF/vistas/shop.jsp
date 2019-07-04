@@ -370,7 +370,7 @@ String ordenado = request.getParameter("ordenado");
 			    					<p class="bottom-area d-flex px-4">
 			    						<a href="${context}/agregarAlCarro/${i.id}" class="add-to-cart text-center py-2 mr-1">Carro<span><i class="ion-ios-cart ml-1"></i></span></a>
 		    							<a href="${context}/detalleProducto/${i.id}/${i.tipo.nombre}" class="buy-now text-center py-2 mr-1"><span>Detalle<i class="ion-ios-add ml-1"></i></span></a>
-		    						    <a href="${context}/cambiarFavorito/${i.id}" class="add-to-cart text-center py-2 mr-1"><span><i class="ion-ios-heart ml-1"></i></span></a>
+		    						    <a href="${context}/favoritos/${i.id}" class="add-to-cart text-center py-2 mr-1"><span><i class="ion-ios-heart ml-1"></i></span></a>
 		    						</p>
 		    					</div>
 		    				</div>
