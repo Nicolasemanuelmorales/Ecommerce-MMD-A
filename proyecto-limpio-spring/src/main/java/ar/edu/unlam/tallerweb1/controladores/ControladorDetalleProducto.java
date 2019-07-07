@@ -18,9 +18,7 @@ public class ControladorDetalleProducto {
 	private ServicioDetalleProducto prod;
 	
 	@RequestMapping(path = "/detalleProducto/{filtrar}/{tipo}")
-	public ModelAndView validarProducto(@PathVariable Long filtrar,
-										@PathVariable String tipo) {
-		
+	public ModelAndView validarProducto(@PathVariable Long filtrar,@PathVariable String tipo) {
 		ModelMap model = new ModelMap();
 		List<Producto> lista = prod.consultarDetalleProducto(filtrar);
 		List<Producto> lista2 = prod.consultarProductosRelacionadosDeDetalleProducto(tipo, filtrar);

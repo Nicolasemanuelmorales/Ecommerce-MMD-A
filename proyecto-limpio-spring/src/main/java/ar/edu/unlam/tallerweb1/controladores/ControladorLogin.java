@@ -16,29 +16,22 @@ public class ControladorLogin {
 	@Inject
 	private ServicioLogin servicioLogin;
 
-
 	@RequestMapping("/login")
 	public ModelAndView irALogin() {
-
 		ModelMap modelo = new ModelMap();
-	
 		Usuario usuario = new Usuario();
 		modelo.put("usuario", usuario);
-	
 		return new ModelAndView("login", modelo);
 	}
-
 
 	@RequestMapping(path = "/validar-login", method = RequestMethod.POST)
 	public ModelAndView validarLogin(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request) {
 		ModelMap model = new ModelMap();
-
 		Usuario usuarioBuscado = servicioLogin.consultarUsuario(usuario);
 		if (usuarioBuscado != null) {
 			request.getSession().setAttribute("ROL", usuarioBuscado.getRol());
 			return new ModelAndView("redirect:/index");
 		} else {
-
 			model.put("error", "Usuario o clave incorrecta");
 		}
 		return new ModelAndView("login", model);
@@ -52,6 +45,11 @@ public class ControladorLogin {
 	@RequestMapping(path = "/index")
 	public ModelAndView index() {
 		return new ModelAndView();
+	}
+
+	public void setServicioLogin(ServicioLogin servicioLogin2) {
+		this.servicioLogin = servicioLogin2;
+		
 	}
 	
 }

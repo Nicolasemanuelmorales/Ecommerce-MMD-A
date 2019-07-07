@@ -26,4 +26,9 @@ public class ServicioLoginImpl implements ServicioLogin {
 		return servicioLoginDao.consultarUsuario(usuario);
 	}
 
+	public void setUsuarioDao(UsuarioDao usuarioDao) {
+		servicioLoginDao = usuarioDao;
+		
+	}
+
 }

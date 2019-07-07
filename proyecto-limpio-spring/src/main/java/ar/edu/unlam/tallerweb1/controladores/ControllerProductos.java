@@ -1,6 +1,4 @@
 package ar.edu.unlam.tallerweb1.controladores;
-
-
 import java.util.List;
 
 import javax.inject.Inject;
@@ -47,6 +45,7 @@ public class ControllerProductos {
 		 model.put("xd", lista);
 		 return new ModelAndView("shop", model);
 	}
+	
 	@RequestMapping(path = "/favoritos/{id}")	
 	public ModelAndView misFavoritos(@PathVariable  Long id,HttpServletRequest request){
 		
