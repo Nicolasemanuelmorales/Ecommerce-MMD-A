@@ -9,6 +9,8 @@ insert into Usuario(email,password,rol)
 Value('asd@asd.com','asd','1');
 insert into Usuario(email,password,rol)
 value('user@user','asd','1');
+insert into Usuario(email,password,rol)
+value('fer@fer','fer','1');
 
 /* Tipo */
 
