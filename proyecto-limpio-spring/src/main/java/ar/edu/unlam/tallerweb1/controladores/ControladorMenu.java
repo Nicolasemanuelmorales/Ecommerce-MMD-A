@@ -37,12 +37,20 @@ public class ControladorMenu {
 	
 	@RequestMapping(path = "/cart", method = RequestMethod.GET)
 	public ModelAndView irACarrito(HttpServletRequest request) {
-		ModelMap model = new ModelMap();
+		
 		HttpSession session = request.getSession();
+		Boolean logeado= (Boolean) session.getAttribute("logeado");
+		
+		if(logeado.equals(true)){
+		ModelMap model = new ModelMap();
+		
 		
 		model.put("xd", session.getAttribute("articulosDeCarrito"));
 		model.put("total", session.getAttribute("totalcarrito"));
 		return new ModelAndView("carrito", model);
+		}else{
+			return new ModelAndView("redirect:/login");
+		}
 	}
 	
 		

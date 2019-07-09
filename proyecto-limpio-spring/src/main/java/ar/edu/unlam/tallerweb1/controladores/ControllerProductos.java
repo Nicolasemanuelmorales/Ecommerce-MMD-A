@@ -49,6 +49,9 @@ public class ControllerProductos {
 	@RequestMapping(path = "/favoritos/{id}")	
 	public ModelAndView misFavoritos(@PathVariable  Long id,HttpServletRequest request){
 		
+		Boolean logeado= (Boolean) request.getSession().getAttribute("logeado");
+		if(logeado.equals(true)){
+		
 		HttpSession session = request.getSession();
 		ModelMap model = new ModelMap();
 		
@@ -88,6 +91,10 @@ public class ControllerProductos {
 			
 		}
 		
+	}else{
+		return new ModelAndView("redirect:/login");
+	}
+		
 
 	}
 	
@@ -112,12 +119,18 @@ public class ControllerProductos {
 	
 	@RequestMapping(path = "/favoritos")
 	public ModelAndView misFavoritosFalse(HttpServletRequest request){
-					   
+		
+		Boolean logeado= (Boolean) request.getSession().getAttribute("logeado");
+		if(logeado.equals(true)){
 		ModelMap model = new ModelMap();	
 		List<Producto> lista = producto.traerFavoritos();
 
 		model.put("favoritos",lista);
 		
 		return new ModelAndView("favoritos",model);
+	}else{
+		return new ModelAndView("redirect:/login");
 	}
+}
+	
 }

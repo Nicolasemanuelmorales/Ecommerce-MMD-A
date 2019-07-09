@@ -27,6 +27,8 @@ public class ControllerAgregarAlCarro {
 	@RequestMapping(path = "/agregarAlCarro/{id}")
 	public ModelAndView agregarAlCarro(@PathVariable Long id, HttpServletRequest request) {
 		
+		Boolean logeado= (Boolean) request.getSession().getAttribute("logeado");
+		if(logeado.equals(true)){
 		ModelMap model = new ModelMap();
 		Producto produc = prod.consultarProductoPorId(id);
 		
@@ -62,6 +64,10 @@ public class ControllerAgregarAlCarro {
 		model.put("id", id);
 		
 		return new ModelAndView("carrito", model);}
+	
+	
+	}else{
+		return new ModelAndView("redirect:/login");
 	}
 	
-}
+}}

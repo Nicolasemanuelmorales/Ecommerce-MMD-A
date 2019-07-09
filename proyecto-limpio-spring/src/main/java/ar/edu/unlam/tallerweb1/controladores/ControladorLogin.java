@@ -17,7 +17,9 @@ public class ControladorLogin {
 	private ServicioLogin servicioLogin;
 
 	@RequestMapping("/login")
-	public ModelAndView irALogin() {
+	public ModelAndView irALogin(HttpServletRequest request) {
+		
+		request.getSession().setAttribute("logeado",false);
 		ModelMap modelo = new ModelMap();
 		Usuario usuario = new Usuario();
 		modelo.put("usuario", usuario);
@@ -29,16 +31,28 @@ public class ControladorLogin {
 		ModelMap model = new ModelMap();
 		Usuario usuarioBuscado = servicioLogin.consultarUsuario(usuario);
 		if (usuarioBuscado != null) {
+			
 			request.getSession().setAttribute("ROL", usuarioBuscado.getRol());
+			request.getSession().setAttribute("logeado",true);
+			
 			return new ModelAndView("redirect:/index");
 		} else {
 			model.put("error", "Usuario o clave incorrecta");
 		}
 		return new ModelAndView("login", model);
 	}
+	
+	@RequestMapping(path = "/cerrarSesion", method = RequestMethod.GET)
+	public ModelAndView cerrarSesion(HttpServletRequest request) {
+		
+		request.getSession().setAttribute("logeado",false);
+		return new ModelAndView("redirect:/index");
+	}
 		
 	@RequestMapping(path = "/", method = RequestMethod.GET)
-	public ModelAndView inicio() {
+	public ModelAndView inicio(HttpServletRequest request) {
+		
+		request.getSession().setAttribute("logeado",false);
 		return new ModelAndView("redirect:/index");
 	}
 	
