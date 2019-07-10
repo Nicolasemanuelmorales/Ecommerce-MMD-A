@@ -16,58 +16,52 @@ import ar.edu.unlam.tallerweb1.servicios.ServicioAgregarAlCarro;
 @Controller
 public class ControllerAgregarAlCarro {
 
-	private List<Producto> listaPrincipal = new ArrayList<Producto>();
-	private Double total=0.0;
-	private Long auxiliar;
-	private Integer contCart = 0;
-	
 	@Inject
 	private ServicioAgregarAlCarro prod;
-	
+
 	@RequestMapping(path = "/agregarAlCarro/{id}")
 	public ModelAndView agregarAlCarro(@PathVariable Long id, HttpServletRequest request) {
 		
-		Boolean logeado= (Boolean) request.getSession().getAttribute("logeado");
-		if(logeado.equals(true)){
-		ModelMap model = new ModelMap();
-		Producto produc = prod.consultarProductoPorId(id);
-		
-		if(id.equals(auxiliar)){
-			
-			total+=produc.getPrecio();
-			HttpSession session = request.getSession();
-			session.setAttribute("articulosDeCarrito",this.listaPrincipal);
-			session.setAttribute("totalcarrito",this.total);
-			model.put("xd", session.getAttribute("articulosDeCarrito"));
-			model.put("total", session.getAttribute("totalcarrito"));
-			model.put("id", id);
-			
-			return new ModelAndView("carrito", model);
-			
-		}else{	
-		
-		auxiliar=id;
-		total+=produc.getPrecio();
-						
-		this.listaPrincipal.add(produc);
-				
 		HttpSession session = request.getSession();
-		session.setAttribute("articulosDeCarrito",this.listaPrincipal);
-		session.setAttribute("totalcarrito",this.total);
+		Boolean logeado = (Boolean) request.getSession().getAttribute("logeado");
 		
-		//suma productos al contador de carrito
-		contCart++;
-		session.setAttribute("contCart",this.contCart);
+		List<Producto> listaPrincipal = new ArrayList<Producto>();
+		Integer contCart = 0;	
+		Long auxiliar=(long) 0;
 		
-		model.put("xd", session.getAttribute("articulosDeCarrito"));
-		model.put("total", session.getAttribute("totalcarrito"));
-		model.put("id", id);
-		
-		return new ModelAndView("carrito", model);}
-	
-	
-	}else{
-		return new ModelAndView("redirect:/login");
+		if (logeado.equals(true)) {
+
+			ModelMap model = new ModelMap();
+			Producto produc = prod.consultarProductoPorId(id);
+			
+			if (id.equals(auxiliar)) {
+				
+				session.setAttribute("articulosDeCarrito",listaPrincipal);
+				model.put("xd", session.getAttribute("articulosDeCarrito"));
+				model.put("id", id);
+				return new ModelAndView("carrito", model);
+
+			} else {
+
+				auxiliar = id;
+								
+				listaPrincipal =(List<Producto>) session.getAttribute("articulosDeCarrito");
+				listaPrincipal.add(produc);
+				session.setAttribute("articulosDeCarrito",listaPrincipal);				
+				
+				contCart = (Integer) session.getAttribute("contCart");
+				contCart++;				
+				session.setAttribute("contCart",contCart);
+				
+				model.put("xd", session.getAttribute("articulosDeCarrito"));
+				model.put("id", id);
+
+				return new ModelAndView("carrito", model);
+			}
+
+		} else {
+			return new ModelAndView("redirect:/login");
+		}
+
 	}
-	
-}}
+}

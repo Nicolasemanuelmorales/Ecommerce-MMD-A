@@ -1,4 +1,7 @@
 package ar.edu.unlam.tallerweb1.controladores;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
@@ -7,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import ar.edu.unlam.tallerweb1.modelo.Producto;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 import ar.edu.unlam.tallerweb1.servicios.ServicioLogin;
 
@@ -31,9 +36,15 @@ public class ControladorLogin {
 		ModelMap model = new ModelMap();
 		Usuario usuarioBuscado = servicioLogin.consultarUsuario(usuario);
 		if (usuarioBuscado != null) {
-			request.getSession().setAttribute("id_usuario", usuarioBuscado.getId());
-			request.getSession().setAttribute("mail_usuario", usuarioBuscado.getEmail());
+			
+			request.getSession().setAttribute("ROL", usuarioBuscado.getRol());
 			request.getSession().setAttribute("logeado",true);
+			List<Producto> listaPrincipal = new ArrayList<Producto>();
+			request.getSession().setAttribute("articulosDeCarrito",listaPrincipal);	
+
+			Integer contCart = 0;
+			request.getSession().setAttribute("contCart",contCart);	
+			
 			return new ModelAndView("redirect:/index");
 		} else {
 			model.put("error", "Usuario o clave incorrecta");

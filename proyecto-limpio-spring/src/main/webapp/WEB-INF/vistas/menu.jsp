@@ -1,8 +1,6 @@
 <%
 HttpSession s = request.getSession(false); 
 Integer contCart = (Integer)s.getAttribute("contCart");
-Long user_id = (Long)s.getAttribute("id_usuario");
-String user_mail = (String)s.getAttribute("mail_usuario");
 Boolean logeado = (Boolean)s.getAttribute("logeado");
 //out.println("contador carrito: " + contCart);
 %>
@@ -32,7 +30,7 @@ Boolean logeado = (Boolean)s.getAttribute("logeado");
 		<%} %>
 
 	          <%if (logeado.equals(true)){ %>
-			<li class="nav-item"><a href="${context}/cerrarSesion" class="nav-link"><% out.println(user_mail +" -- " + user_id);%> Cerrar Sesion</a></li>  
+			<li class="nav-item"><a href="${context}/cerrarSesion" class="nav-link">Cerrar Sesion</a></li>  
  						<%}else{ %>
 			<li class="nav-item"><a href="${context}/login" class="nav-link">Iniciar Sesion</a></li>  
  						<%} %>	
