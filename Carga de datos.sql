@@ -1,4 +1,5 @@
-/*drop Database if exists `db`;
+/*
+drop Database if exists `db`;
 create Database `db`;
 */
 Use `db`;

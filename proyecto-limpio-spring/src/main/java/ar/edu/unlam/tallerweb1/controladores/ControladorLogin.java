@@ -39,6 +39,7 @@ public class ControladorLogin {
 			
 			request.getSession().setAttribute("ROL", usuarioBuscado.getRol());
 			request.getSession().setAttribute("logeado",true);
+			request.getSession().setAttribute("email",usuarioBuscado.getEmail());
 			List<Producto> listaPrincipal = new ArrayList<Producto>();
 			request.getSession().setAttribute("articulosDeCarrito",listaPrincipal);	
 

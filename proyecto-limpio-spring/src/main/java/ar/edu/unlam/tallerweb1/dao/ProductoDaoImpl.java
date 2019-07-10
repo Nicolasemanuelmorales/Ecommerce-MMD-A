@@ -98,8 +98,7 @@ public class ProductoDaoImpl implements ProductoDao{
 		return (Producto) session
 				.createCriteria(Producto.class)
 				.add(Restrictions.eq("id",id))
-				.uniqueResult()	;
-		
+				.uniqueResult()	;		
 	}
 
 	

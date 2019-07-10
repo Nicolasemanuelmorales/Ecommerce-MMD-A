@@ -19,20 +19,19 @@ String ordenado = request.getParameter("ordenado");
     <%@include file='menu.jsp'%>
     
     <div class="container">
-    		
-			<div class="col-md-8 col-lg-10 order-md-last">
+    					<div class="col-md-8 col-lg-10 order-md-last">
     				<div class="row">
     				<c:forEach items="${favoritos}" var="i">
     				<div class="col-sm-6 col-md-6 col-lg-4 ftco-animate">
 		    				<div class="product">
-		    					<a href="${context}/detalleProducto/${i.id}/${i.tipo.nombre}" class="img-prod"><img class="img-fluid" src="${context}/ ${i.imagen}" alt="Colorlib Template">
+		    					<a href="${context}/detalleProducto/${i.id}/${i.producto.tipo.nombre}" class="img-prod"><img class="img-fluid" src="${context}/ ${i.producto.imagen}" alt="Colorlib Template">
 		    						<div class="overlay"></div>
 		    					</a>
 		    					<div class="text py-3 px-3">
-		    						<h3><a href="#">${i.nombre}</a></h3>
+		    						<h3><a href="#">${i.producto.nombre}</a></h3>
 		    						<div class="d-flex">
 		    							<div class="pricing">
-				    						<p class="price"><span class="price-sale">$ ${i.precio}</span></p>
+				    						<p class="price"><span class="price-sale">$ ${i.producto.precio}</span></p>
 				    					</div>
 				    					<div class="rating">
 			    							<p class="text-right">
@@ -45,9 +44,9 @@ String ordenado = request.getParameter("ordenado");
 			    						</div>
 			    					</div>
 			    					<p class="bottom-area d-flex px-3">
-			    						<a href="${context}/agregarAlCarro/${i.id}" class="add-to-cart text-center py-2">Carro<span><i class="ion-ios-cart ml-1"></i></span></a>
-		    							<a href="${context}/detalleProducto/${i.id}/${i.tipo.nombre}" class="buy-now text-center py-2 mr-1"><span>Detalle<i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="${context}/favoritos/${i.id}" class="buy-now text-center py-2 mr-1"><span><i class="ion-ios-heart ml-1"></i></span></a>
+			    						<a href="${context}/agregarAlCarro/${i.producto.id}" class="add-to-cart text-center py-2">Carro<span><i class="ion-ios-cart ml-1"></i></span></a>
+		    							<a href="${context}/detalleProducto/${i.producto.id}/${i.producto.tipo.nombre}" class="buy-now text-center py-2 mr-1"><span>Detalle<i class="ion-ios-add ml-1"></i></span></a>
+		    							<a href="${context}/favoritos/${i.producto.id}" class="buy-now text-center py-2 mr-1"><span><i class="ion-ios-heart ml-1"></i></span></a>
 
 		    						</p>
 		    					</div>
