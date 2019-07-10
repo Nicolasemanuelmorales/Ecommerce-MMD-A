@@ -18,6 +18,20 @@ String ordenado = request.getParameter("ordenado");
 	<%@include file='barra_superior.jsp'%>
     <%@include file='menu.jsp'%>
     
+        <!-- END nav -->
+       <div class="hero-wrap hero-bread" style="background-image: url('${context}/images/bg_6.jpg');">
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+          
+            <h1 class="mb-0 bread">Favoritos</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="ftco-section bg-light">
+    
     <div class="container">
     					<div class="col-md-8 col-lg-10 order-md-last">
     				<div class="row">
@@ -46,7 +60,7 @@ String ordenado = request.getParameter("ordenado");
 			    					<p class="bottom-area d-flex px-3">
 			    						<a href="${context}/agregarAlCarro/${i.producto.id}" class="add-to-cart text-center py-2">Carro<span><i class="ion-ios-cart ml-1"></i></span></a>
 		    							<a href="${context}/detalleProducto/${i.producto.id}/${i.producto.tipo.nombre}" class="buy-now text-center py-2 mr-1"><span>Detalle<i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="${context}/favoritos/${i.producto.id}" class="buy-now text-center py-2 mr-1"><span><i class="ion-ios-heart ml-1"></i></span></a>
+		    							<a href="${context}/SacarDefavoritos/${i.producto.id}" class="buy-now text-center py-2 mr-1"><span><i class="ion-ios-heart-empty ml-1"></i></span></a>
 
 		    						</p>
 		    					</div>
@@ -54,23 +68,11 @@ String ordenado = request.getParameter("ordenado");
 		    			</div>
 		    			</c:forEach>
 		    		</div>
-		    		<div class="row mt-5">
-		          <div class="col text-center">
-		            <div class="block-27">
-		              <ul>
-		                <li><a href="#">&lt;</a></li>
-		                <li class="active"><span>1</span></li>
-		                <li><a href="#">2</a></li>
-		                <li><a href="#">3</a></li>
-		                <li><a href="#">4</a></li>
-		                <li><a href="#">5</a></li>
-		                <li><a href="#">&gt;</a></li>
-		              </ul>
-		            </div>
-		          </div>
-		        </div>
+		    		
 		    	</div>
 		    	</div> 
+
+    </section>
  <%@include file='newsletter.jsp' %>
 <%@include file='footer.jsp' %>
   	<!-- loader -->

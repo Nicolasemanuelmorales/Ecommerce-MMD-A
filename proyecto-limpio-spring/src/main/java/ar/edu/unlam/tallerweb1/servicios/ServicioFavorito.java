@@ -11,6 +11,6 @@ public interface ServicioFavorito {
 	
 	List<Favorito> traerFavoritoPorIdDeProducto(Long id);
 	
-	Favorito traerFavoritoPorIdDeProductoUnique(Long id);
+	Favorito traerFavoritoPorIdDeProductoUnique(Long id , String miEmail);
 	
 }

@@ -28,8 +28,8 @@ public class ServicioFavoritoImpl implements ServicioFavorito{
 	}
 
 	@Override
-	public Favorito traerFavoritoPorIdDeProductoUnique(Long id) {
-		return servicioFavoritoDao.traerFavoritoPorIdDeProductoUnique(id);
+	public Favorito traerFavoritoPorIdDeProductoUnique(Long id , String miEmail) {
+		return servicioFavoritoDao.traerFavoritoPorIdDeProductoUnique(id, miEmail);
 	}
 
 }

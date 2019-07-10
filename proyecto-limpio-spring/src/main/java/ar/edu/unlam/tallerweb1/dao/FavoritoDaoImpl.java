@@ -44,10 +44,11 @@ public class FavoritoDaoImpl implements FavoritoDao{
 	}
 
 	@Override
-	public Favorito traerFavoritoPorIdDeProductoUnique(Long id) {
+	public Favorito traerFavoritoPorIdDeProductoUnique(Long id, String miEmail) {
 		final Session session = sessionFactory.getCurrentSession();
 		return (Favorito) session
 		.createCriteria(Favorito.class)
+		.add(Restrictions.eq("emailUser",miEmail))
 		.createAlias("producto", "p")
 		.add(Restrictions.eq("p.id",id))
 		.uniqueResult();
