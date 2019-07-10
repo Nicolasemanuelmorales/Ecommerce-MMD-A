@@ -28,6 +28,8 @@ public class ControllerAgregarAlCarro {
 		List<Producto> listaPrincipal = new ArrayList<Producto>();
 		Integer contCart = 0;	
 		Long auxiliar=(long) 0;
+		auxiliar = (Long) session.getAttribute("auxiliar");
+		
 		
 		if (logeado.equals(true)) {
 
@@ -36,7 +38,7 @@ public class ControllerAgregarAlCarro {
 			
 			if (id.equals(auxiliar)) {
 				
-				session.setAttribute("articulosDeCarrito",listaPrincipal);
+				listaPrincipal =(List<Producto>) session.getAttribute("articulosDeCarrito");
 				model.put("xd", session.getAttribute("articulosDeCarrito"));
 				model.put("id", id);
 				return new ModelAndView("carrito", model);
@@ -44,7 +46,8 @@ public class ControllerAgregarAlCarro {
 			} else {
 
 				auxiliar = id;
-								
+				session.setAttribute("auxiliar",auxiliar);	
+				
 				listaPrincipal =(List<Producto>) session.getAttribute("articulosDeCarrito");
 				listaPrincipal.add(produc);
 				session.setAttribute("articulosDeCarrito",listaPrincipal);				
