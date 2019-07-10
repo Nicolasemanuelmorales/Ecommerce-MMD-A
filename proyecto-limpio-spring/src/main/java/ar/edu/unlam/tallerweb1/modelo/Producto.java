@@ -20,14 +20,6 @@ public class Producto {
 	private String talle;
 	private String nombre;
 	private Integer stock;
-	private String favorito;
-	public String getFavorito() {
-		return favorito;
-	}
-
-	public void setFavorito(String favorito) {
-		this.favorito = favorito;
-	}
 
 	@ManyToOne 
 	private  Tipo tipo;
