@@ -26,12 +26,13 @@ public class ServicioProductoImpl implements ServicioProducto{
 		return servicioProductoDao.filtrarProductoPor(filtro, formaDeFiltro, formaDeFiltro2, ordenado);
 	}
 	@Override
-	public List<Producto> traerFavoritos() {
-		return servicioProductoDao.traerFavoritos();
-	}
-	@Override
 	public Producto consultarProductoPorId(Long id) {
 		return servicioProductoDao.consultarProductoPorId(id);
+	}
+	
+	public void setProductoDao(ProductoDao productoDao) {
+		servicioProductoDao = productoDao;
+		
 	}
 	
 }

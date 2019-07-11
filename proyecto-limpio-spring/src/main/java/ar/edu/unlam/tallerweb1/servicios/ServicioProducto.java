@@ -11,8 +11,6 @@ public interface ServicioProducto {
 
 	List<Producto> filtrarProductoPor(String filtro, Double formaDeFiltro, Double formaDeFiltro2, String ordenado);
 
-	List<Producto> traerFavoritos();
-
 	Producto consultarProductoPorId(Long id);
 
 }

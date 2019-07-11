@@ -100,10 +100,4 @@ public class ProductoDaoImpl implements ProductoDao{
 				.add(Restrictions.eq("id",id))
 				.uniqueResult()	;		
 	}
-
-	
-	
-
-
-
 }

@@ -13,12 +13,14 @@ public class TestServicioLogin {
 	public void testQueEvaluaServicioLogin() {
 		Usuario user = new Usuario();
 		ServicioLoginImpl sut = new ServicioLoginImpl();
+		
 		//Creamos un falso Dao
 		//Stub es un objeto de tipo Test Double, La libreria Mokito llama mock a cualquier stub
 		UsuarioDao usuarioDao = mock(UsuarioDao.class);
 		sut.setUsuarioDao(usuarioDao);
+		
 		//le decimos que cree un usuario determinado y que se maneje con ese solamente
-		when(usuarioDao.consultarUsuario(user)).thenReturn(new Usuario());
+		when(usuarioDao.consultarUsuario(user)).thenReturn(user);
 		Usuario user2 = sut.consultarUsuario(user);
 		assertThat(user).isEqualTo(user2);
 	}
