@@ -64,7 +64,7 @@ public class TestSerivicioProducto {
 		
 		when(productoDao.filtrarProductoPor(filtro, formaDeFiltro, formaDeFiltro2, ordenado)).thenReturn(p);
 		List<Producto> p2 = sut.filtrarProductoPor(filtro, formaDeFiltro, formaDeFiltro2, ordenado);
-		assertThat(p2).hasSize(1);
+		assertThat(p2).hasSize(2);
 	}
 	
 	@Test
