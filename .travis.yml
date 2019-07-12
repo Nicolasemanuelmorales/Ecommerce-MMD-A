@@ -1,0 +1,5 @@
+language: java
+
+notifications:
+  on_success: always
+  on_failure: always
