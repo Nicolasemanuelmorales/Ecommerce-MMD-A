@@ -31,7 +31,7 @@ public class TestSerivicioProducto {
 		
 		when(productoDao.consultarProducto("remera")).thenReturn(p);
 		List<Producto> p2 = sut.consultarProducto("remera");
-		assertThat(p2).hasSize(2);
+		assertThat(p2).hasSize(1);
 	}
 	
 	@Test
