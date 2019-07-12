@@ -1,5 +1,9 @@
 language: java
 
+script:
+  - jdk_switcher use oraclejdk8
+  - jdk_switcher use openjdk8
+
 notifications:
   on_success: always
   on_failure: always
