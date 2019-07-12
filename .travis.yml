@@ -5,3 +5,12 @@ script:
   - # do stuff with Java 8
   - jdk_switcher use openjdk8
   - # do stuff with open Java 8
+
+notifications:
+  email:
+    - fernandomoreno2007@gmail.com
+    - gagustin.sk@gmail.com
+    - nicolasemanuelmorales@hotmail.com
+
+  on_success: always
+  on_failure: never
