@@ -24,5 +24,4 @@ public class ControladorBuscar{
 		List<Producto> lista = buscar.consultarBuscarServ(item);
 		model.put("xd",lista);
 		return new ModelAndView("shop",model);
-	}
-}
+	
