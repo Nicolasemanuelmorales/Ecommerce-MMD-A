@@ -39,7 +39,7 @@ public class BuscarDaoTest extends SpringTest{
 		getSession().save(remera);
 		
 		List<Producto> buscados = dao.consultarBuscarDao("remeraMangaLarga");
-		assertThat(buscados).hasSize(1111);
+		assertThat(buscados).hasSize(1);
 	}
 
 }
