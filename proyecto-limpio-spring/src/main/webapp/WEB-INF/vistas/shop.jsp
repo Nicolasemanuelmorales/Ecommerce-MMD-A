@@ -110,9 +110,9 @@ String ordenado = request.getParameter("ordenado");
 		    		<br>
 		    			<h2 class="heading mb-4"><a href="#">Rango</a></h2>
 		    			<label>Desde </label>
-		    		 	<input class="asd" type="text" value="${formaDeFiltro}" name="formaDeFiltro"><br>
+		    		 	<input class="asd" type="number" value="${formaDeFiltro}" name="formaDeFiltro"><br>
 		    		 	<label>Hasta </label>
-		    		 	<input type="text" class="asd" value="${formaDeFiltro2}" name="formaDeFiltro2"><br>
+		    		 	<input type="number" class="asd" value="${formaDeFiltro2}" name="formaDeFiltro2"><br>
 		    		</div>
 		    		
 		    		<div class="sidebar-box-2">
@@ -287,15 +287,15 @@ String ordenado = request.getParameter("ordenado");
 		    			<h2 class="heading mb-4"><a href="#">Rango</a></h2>
 		    			<label>Desde</label>
 		    			<%if (formaDeFiltro == null){ %>
-		    		 		<input type="text"class="asd" value="${formaDeFiltro}" name="formaDeFiltro"><br>
+		    		 		<input type="number"class="asd" value="${formaDeFiltro}" name="formaDeFiltro"><br>
 		    		 	<%}else{ %>
-		    		 		<input type="text"class="asd" value="<%out.println(formaDeFiltro);%>" name="formaDeFiltro"><br>
+		    		 		<input type="number"class="asd" value="<%out.println(formaDeFiltro);%>" name="formaDeFiltro"><br>
 		    		 	<%} %>
 		    			<label>Hasta </label>
 		    			<%if (formaDeFiltro == null){ %>
-		    		 		<input type="text" class="asd" value="${formaDeFiltro2}" name="formaDeFiltro2"><br>
+		    		 		<input type="number" class="asd" value="${formaDeFiltro2}" name="formaDeFiltro2"><br>
 		    		 	<%}else{ %>
-		    		 		<input type="text" class="asd" value="<%out.println(formaDeFiltro2);%>" name="formaDeFiltro2"><br>
+		    		 		<input type="number" class="asd" value="<%out.println(formaDeFiltro2);%>" name="formaDeFiltro2"><br>
 		    		 	<%} %>
 		    		</div>
 		    		
@@ -357,16 +357,7 @@ String ordenado = request.getParameter("ordenado");
 		    							<div class="pricing">
 				    						<p class="price"><span class="price-sale">$ ${i.precio}</span></p>
 				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
-			    					</div>
+				    				</div>
 			    					<p class="bottom-area d-flex px-4">
 			    						<a href="${context}/agregarAlCarro/${i.id}" class="add-to-cart text-center py-2 mr-1">Carro<span><i class="ion-ios-cart ml-1"></i></span></a>
 		    							<a href="${context}/detalleProducto/${i.id}/${i.tipo.nombre}" class="buy-now text-center py-2 mr-1"><span>Detalle<i class="ion-ios-add ml-1"></i></span></a>

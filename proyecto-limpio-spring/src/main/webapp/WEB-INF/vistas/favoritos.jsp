@@ -12,7 +12,22 @@ String ordenado = request.getParameter("ordenado");
 <c:set var="context" value="${pageContext.request.contextPath}"/>
  <head>
     <title>MMD'A</title>
-    <%@include file='head.jsp'%>    
+    <%@include file='head.jsp'%>
+    
+     <style>
+    	.per{
+    		background-color:#fff;
+    		padding: 1em 0 1em 2em;
+   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+    		max-height:1300px;
+    	}
+    	
+    	.product{
+       box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.1) !important;
+}
+    	
+    </style>
+        
   </head>
   <body class="goto-here">
 	<%@include file='barra_superior.jsp'%>
@@ -46,16 +61,7 @@ String ordenado = request.getParameter("ordenado");
 		    						<div class="d-flex">
 		    							<div class="pricing">
 				    						<p class="price"><span class="price-sale">$ ${i.producto.precio}</span></p>
-				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
+				    					</div>		    					
 			    					</div>
 			    					<p class="bottom-area d-flex px-3">
 			    						<a href="${context}/agregarAlCarro/${i.producto.id}" class="add-to-cart text-center py-2">Carro<span><i class="ion-ios-cart ml-1"></i></span></a>

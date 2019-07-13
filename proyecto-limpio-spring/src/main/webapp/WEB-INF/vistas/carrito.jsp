@@ -72,7 +72,7 @@
 				                   <i class="ion-ios-remove"></i>
 				                	</button>
 				            		</span>
-				             	<input type="text" id="quantity${contador}" name="quantity" class="form-control input-number" value="0" min="0" max="${i.stock}">
+				             	<input type="text" id="quantity${contador}" name="quantity" class="form-control input-number" value="0" min="0" max="${i.stock}" readonly>
 				             	<span class="input-group-btn ml-2">
 				                	<button type="button" class="quantity-right-plus btn" data-type="plus" data-field="" onclick="sumar(${contador})">
 				                     <i class="ion-ios-add"></i>
