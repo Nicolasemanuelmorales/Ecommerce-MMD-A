@@ -43,6 +43,10 @@
 		<property name="packagesToScan">
 			<list>
 				<value>ar.edu.unlam.tallerweb1.modelo</value>
+				<value>ar.edu.unlam.tallerweb1.controlador</value>
+				<value>ar.edu.unlam.tallerweb1.servicios</value>
+				<value>ar.edu.unlam.tallerweb1.dao</value>
+				
 			</list>
 		</property>
 	</bean>
