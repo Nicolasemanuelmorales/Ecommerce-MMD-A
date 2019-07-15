@@ -38,7 +38,7 @@ public class TestDetalleProductoDao extends SpringTest{
 		getSession().save(remera);
 		
 		List<Producto> buscados = dao.consultarProductosRelacionadosDeDetalleProducto("remeraMangaLarga", (long) 1);
-		assertThat(buscados).hasSize(20);
+		assertThat(buscados).hasSize(1);
 	}
 
 }
