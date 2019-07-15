@@ -60,7 +60,7 @@ public class TestProducto extends SpringTest {
 				.add(Restrictions.eq("p.color", "verde"))
 				.add(Restrictions.eq("t.nombre", "campera"))
 				.list();
-		assertThat(prod).hasSize(1);
+		assertThat(prod).hasSize(0);
 	}
 
 }
