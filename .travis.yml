@@ -1,11 +1,5 @@
 language: java
 
-script:
-  - jdk_switcher use oraclejdk8
-  - # do stuff with Java 8
-  - jdk_switcher use openjdk8
-  - # do stuff with open Java 8
-
 notifications:
   email:
     - fernandomoreno2007@gmail.com
