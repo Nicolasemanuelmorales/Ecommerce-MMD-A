@@ -1,5 +1,9 @@
 language: java
 
+jdk:
+  - oraclejdk8
+  - openjdk8
+
 notifications:
   email:
     - fernandomoreno2007@gmail.com
