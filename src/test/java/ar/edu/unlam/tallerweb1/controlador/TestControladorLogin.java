@@ -15,11 +15,13 @@ public class TestControladorLogin {
 	
 	@Test
 	public void TestQueEvaluaValidarLoginErroneo() {
+		
 		ControladorLogin sut = new ControladorLogin();
 		Usuario usuario = null;
 		HttpServletRequest request = null;
 		
 		ServicioLogin servicioLogin = mock(ServicioLogin.class);
+		
 		sut.setServicioLogin(servicioLogin);
 		when(servicioLogin.consultarUsuario(usuario)).thenReturn(null);
 		
@@ -30,19 +32,23 @@ public class TestControladorLogin {
 		assertThat(modelo.getModel().get("error")).isEqualTo("Usuario o clave incorrecta");
 	}
 	
-	/*@Test
-	public void TestQueEvaluaValidarLoginCorrecto() {
-		
-		ControladorLogin sut = new ControladorLogin();
-		Usuario usuario2 = new Usuario();
-		HttpServletRequest request = null ;
-		
-		ServicioLogin servicioLogin2 = mock(ServicioLogin.class);
-		sut.setServicioLogin(servicioLogin2);
-		when(servicioLogin2.consultarUsuario(usuario2)).thenReturn(null);
-		
-		ModelAndView modelo = sut .validarLogin(usuario2 , request );
-		assertThat(modelo.getViewName()).isEqualTo("index");
-
-	}*/
+//	@Test
+//	public void TestQueEvaluaValidarLoginCorrecto() {
+//		
+//		ControladorLogin sut = new ControladorLogin();
+//		
+//		Usuario usuario2 = new Usuario();
+//		
+//		HttpServletRequest request = null ;
+//		
+//		ServicioLogin servicioLogin2 = mock(ServicioLogin.class);
+//		
+//		sut.setServicioLogin(servicioLogin2);
+//		
+//		when(servicioLogin2.consultarUsuario(usuario2)).thenReturn(usuario2);
+//		
+//		ModelAndView modelo = sut.validarLogin(usuario2 , request );
+//		assertThat(modelo.getViewName()).isEqualTo("index");
+//
+//	}
 }

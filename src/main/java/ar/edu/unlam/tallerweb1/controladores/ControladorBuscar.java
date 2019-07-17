@@ -25,4 +25,9 @@ public class ControladorBuscar{
 		model.put("xd",lista);
 		return new ModelAndView("shop",model);
 	}
+
+	public void setServicioBuscar(ServicioBuscar servicioBuscar) {
+		this.buscar=servicioBuscar;
+		
+	}
 }
