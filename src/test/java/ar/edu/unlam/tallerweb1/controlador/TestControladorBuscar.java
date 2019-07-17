@@ -50,7 +50,7 @@ public class TestControladorBuscar {
 		
 		ModelAndView modelo = sut.busqueda(item);
 		
-		assertThat(modelo.getViewName()).isEqualTo("shop");
+		assertThat(modelo.getViewName()).isEqualTo("52185");
 		
 	}
 	
