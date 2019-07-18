@@ -40,14 +40,14 @@
 						    </thead>
 						    
 <!--  iniciamos el contador  -->
-<c:set var="contador" value="${1}" />
+<c:set var="contador" value="${0}" />
 
 						    <tbody>
 <form action="${context}/checkout" method="GET">					    
 						    <c:forEach items="${xd}" var="i">
 <input type="text" value="${i.id }" name="id" hidden="">
 						      <tr class="text-center">
-						        <td class="product-remove"><a href="${context}/quitarDelCarro/${i.id}"><span class="ion-ios-close"></span></a></td>
+						        <td class="product-remove"><a href="${context}/quitarDelCarro2/${i.id}"><span class="ion-ios-close"></span></a></td>
 						        
 						        <td class="image-prod"><div class="img" style="background-image:url(${context}/${i.imagen});"></div></td>
 						        
@@ -123,9 +123,19 @@
     						<span>Total</span>
     						<span id="total">$0.00</span>
     					</p>
+    					<hr>
+    					<input type="radio" value="" checked=""> Visa 
+    					<input type="radio" value=""> Mastercard 
+    					<input type="radio" value=""> Naranja
+    					<br>
+    					<label for="tarjeta">Ingrese N° Tarjeta</label>
+    					<input type="text" required="" name="tarjeta">
+    					<br>
+    					<label for="cod">Ingrese Cod. Seg</label>
+    					<input type="text" required="" name="cod">
     				</div>
     				<%if (contCart == null){ %>
-    				< p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4 disabled">Realizar compra</a></p>
+    				< p class="text-center"><a href="" class="btn btn-primary py-3 px-4 disabled">Realizar compra</a></p>
     				<%}else{ %>
     				<!-- p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Realizar compra</a></p-->
     				<input type="submit" value="Realizar compra" class="btn btn-primary py-3 px-4">

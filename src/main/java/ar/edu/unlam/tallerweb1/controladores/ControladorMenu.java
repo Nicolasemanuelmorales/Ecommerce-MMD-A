@@ -13,7 +13,7 @@ import ar.edu.unlam.tallerweb1.modelo.Producto;
 @Controller
 public class ControladorMenu {
 	
-	private Integer contador= 1;
+	//private Integer contador= 1;
 
 	@RequestMapping(path = "/index", method = RequestMethod.GET)
 	public ModelAndView irAIndex(@ModelAttribute("producto") Producto producto){

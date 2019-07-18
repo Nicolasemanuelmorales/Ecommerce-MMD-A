@@ -45,8 +45,8 @@
 	          </div>
           </div>
         </div>
-        <div class="row block-9">
-          <div class="col-md-6 order-md-last d-flex">
+        <div class="row ">
+          <div class="col-md-12 order-md-last d-flex" >
             
             <form action="enviar-mensaje" method="GET" class="bg-white p-5 contact-form">
               <div class="form-group">
@@ -63,14 +63,10 @@
               </div>
              
               <div class="form-group">
-                <input type="submit" value="Enviar" class="btn btn-primary py-3 px-5">
+                <input type="submit" value="Enviar" class="btn btn-primary py-3 px-5" style="float: right">
               </div>
             </form>
           
-          </div>
-
-          <div class="col-md-6 d-flex">
-          	<div id="map" class="bg-white"></div>
           </div>
         </div>
       </div>
