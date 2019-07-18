@@ -102,6 +102,7 @@ public class TestSerivicioProducto {
 		
 		ServicioFavoritoImpl servicio = new ServicioFavoritoImpl();
 		FavoritoDao dao = mock(FavoritoDao.class);
+		servicio.setDao(dao);
 		
 		when(dao.traerFavoritos(email)).thenReturn(lista);
 		

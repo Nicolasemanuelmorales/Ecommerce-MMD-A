@@ -124,15 +124,23 @@
     						<span id="total">$0.00</span>
     					</p>
     					<hr>
-    					<input type="radio" value="" checked=""> Visa 
-    					<input type="radio" value=""> Mastercard 
-    					<input type="radio" value=""> Naranja
+    					
+    					
+    					<div class="text-center radio" style="width: 100%;">
+    					<input type="radio" name="filtro" value="RemeraMangalarga" checked> Visa 
+    					<input type="radio" name="filtro" value="RemeraMangalarga"> Mastercard 
+    					<input type="radio" name="filtro" value="RemeraMangalarga"> Naranja
+    					</div>
+    					
     					<br>
-    					<label for="tarjeta">Ingrese N° Tarjeta</label>
-    					<input type="text" required="" name="tarjeta">
+    					<div class="text-center" style="width: 100%;">
+    					<label for="tarjeta">Ingrese Numero Tarjeta</label><br>
+    					<input type="number" required="" name="tarjeta">
     					<br>
-    					<label for="cod">Ingrese Cod. Seg</label>
-    					<input type="text" required="" name="cod">
+    					<br>
+    					<label for="cod">Ingrese Codigo de Seguridad </label><br>
+    					<input type="number" required="" name="cod">
+    					</div>
     				</div>
     				<%if (contCart == null){ %>
     				< p class="text-center"><a href="" class="btn btn-primary py-3 px-4 disabled">Realizar compra</a></p>

@@ -32,4 +32,8 @@ public class ServicioFavoritoImpl implements ServicioFavorito{
 		return servicioFavoritoDao.traerFavoritoPorIdDeProductoUnique(id, miEmail);
 	}
 
+	public void setDao(FavoritoDao dao) {
+		this.servicioFavoritoDao = dao;
+	}
+
 }
