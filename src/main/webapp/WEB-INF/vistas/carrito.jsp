@@ -43,9 +43,9 @@
 <c:set var="contador" value="${1}" />
 
 						    <tbody>
-						    
+<form action="${context}/checkout" method="GET">					    
 						    <c:forEach items="${xd}" var="i">
-	
+<input type="text" value="${i.id }" name="id" hidden="">
 						      <tr class="text-center">
 						        <td class="product-remove"><a href="${context}/quitarDelCarro/${i.id}"><span class="ion-ios-close"></span></a></td>
 						        
@@ -125,11 +125,12 @@
     					</p>
     				</div>
     				<%if (contCart == null){ %>
-    				<p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4 disabled">Realizar compra</a></p>
+    				< p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4 disabled">Realizar compra</a></p>
     				<%}else{ %>
-    				<p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Realizar compra</a></p>
+    				<!-- p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Realizar compra</a></p-->
+    				<input type="submit" value="Realizar compra" class="btn btn-primary py-3 px-4">
     				<%}%>
-    			</div>
+    			</div></form>
     		</div>
 			</div>
 		</section>
