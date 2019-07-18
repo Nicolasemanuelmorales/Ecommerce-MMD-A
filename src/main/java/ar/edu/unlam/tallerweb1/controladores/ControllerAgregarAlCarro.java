@@ -67,4 +67,21 @@ public class ControllerAgregarAlCarro {
 		}
 
 	}
+	
+	@RequestMapping(path = "/quitarDelCarro/{id}")
+	public ModelAndView quitarDelCarro(@PathVariable Long id, HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		List<Producto> listaPrincipal = new ArrayList<Producto>();
+		Integer contCart = 0;	
+		ModelMap model = new ModelMap();
+		
+		session.setAttribute("articulosDeCarrito",listaPrincipal);				
+		session.setAttribute("contCart",contCart);
+		
+		model.put("xd", session.getAttribute("articulosDeCarrito"));
+
+		return new ModelAndView("carrito", model);
+			
+	}
 }
