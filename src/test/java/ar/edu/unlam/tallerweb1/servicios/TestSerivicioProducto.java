@@ -9,7 +9,9 @@ import java.util.List;
 
 import org.junit.Test;
 
+import ar.edu.unlam.tallerweb1.dao.FavoritoDao;
 import ar.edu.unlam.tallerweb1.dao.ProductoDao;
+import ar.edu.unlam.tallerweb1.modelo.Favorito;
 import ar.edu.unlam.tallerweb1.modelo.Producto;
 import ar.edu.unlam.tallerweb1.modelo.Tipo;
 
@@ -82,5 +84,30 @@ public class TestSerivicioProducto {
 		when(productoDao.consultarProductoPorId(buscado)).thenReturn(p);
 		Producto p2 = sut.consultarProductoPorId(buscado2);
 		assertThat(p2).isEqualTo(p);
+	}
+	
+
+	@Test
+	public void TestFavorito(){
+		
+		Favorito miFavorito = new Favorito();
+		
+		miFavorito.setEmailUser("asd@asd.com");
+		
+		List<Favorito> lista = new ArrayList<Favorito>();
+		
+		String email = "asd@asd.com";
+		String email2 = "asd@asd.com";
+		lista.add(miFavorito);
+		
+		ServicioFavoritoImpl servicio = new ServicioFavoritoImpl();
+		FavoritoDao dao = mock(FavoritoDao.class);
+		
+		when(dao.traerFavoritos(email)).thenReturn(lista);
+		
+		List<Favorito> lista2 = servicio.traerFavoritos(email2);
+		
+		assertThat(lista2).hasSize(1);
+		
 	}
 }
