@@ -70,24 +70,44 @@ public class ControllerAgregarAlCarro {
 		}
 
 	}
-	@Inject
-	private ServicioDetalleProducto servicio;
-	
+		
 	@SuppressWarnings({ "unchecked" })
 	@RequestMapping(path = "/quitarDelCarro2/{id}")
-	public ModelAndView quitarDelCarro2(@PathVariable Long id, HttpServletRequest request) {
+	public ModelAndView quitarDelCarro2(@PathVariable Integer id, HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
 		List<Producto> l = new ArrayList<Producto>();
 		Integer contCart = 0;
 		
-		List<Producto> p = servicio.consultarDetalleProducto(id);
-		
 		ModelMap model = new ModelMap();
 				
 		l = (List<Producto>) session.getAttribute("articulosDeCarrito");
 		//l.remove(p);
-		l.remove(0);
+		switch(id) {
+		case 0 : l.remove(0);
+		break;
+		case 1 : l.remove(1);
+		break;
+		case 2 : l.remove(2);
+		break;
+		case 3 : l.remove(3);
+		break;
+		case 4 : l.remove(4);
+		break;
+		case 5 : l.remove(5);
+		break;
+		case 6 : l.remove(6);
+		break;
+		case 7 : l.remove(7);
+		break;
+		case 8 : l.remove(8);
+		break;
+		case 9 : l.remove(9);
+		break;
+		case 10 : l.remove(10);
+		break;
+		}
+		
 		
 		session.setAttribute("articulosDeCarrito",l);				
 		//System.out.println(listaPrincipal.size());

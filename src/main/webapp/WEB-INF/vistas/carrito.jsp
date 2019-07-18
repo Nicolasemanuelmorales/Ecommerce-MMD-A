@@ -47,7 +47,7 @@
 						    <c:forEach items="${xd}" var="i">
 <input type="text" value="${i.id }" name="id" hidden="">
 						      <tr class="text-center">
-						        <td class="product-remove"><a href="${context}/quitarDelCarro2/${i.id}"><span class="ion-ios-close"></span></a></td>
+						        <td class="product-remove"><a href="${context}/quitarDelCarro2/${contador}"><span class="ion-ios-close"></span></a></td>
 						        
 						        <td class="image-prod"><div class="img" style="background-image:url(${context}/${i.imagen});"></div></td>
 						        
