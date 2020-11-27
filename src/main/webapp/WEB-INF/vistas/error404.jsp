@@ -18,7 +18,7 @@
 <br><br><br><br><br><br><br><br>
 	
 	
-	<a href="http://localhost:8080/proyecto-limpio-spring/index">
+	<a href="http://localhost:8080/Ecommerce-MMD-A/index">
 	<button type="button" class="btn-lg btn-danger">
 	Home
 	</button>
